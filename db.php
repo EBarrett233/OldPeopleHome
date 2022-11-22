@@ -9,8 +9,22 @@
       echo "Error : Unable to open database\n";
    } else {
       echo "Opened database successfully\n";
-   }
-pg_close($db)
-// connection to the db just change the $credintals to your own user and password
-?>
+      echo'test';
+      $sql ="
+         CREATE TABLE IF NOT EXISTS test1 
+         (ID INT PRIMARY KEY     NOT NULL,
+         test2           TEXT    NOT NULL,
+         test3            INT     NOT NULL,
+         test4        CHAR(50),
+         test5         REAL);
+      ";
+      $ret = pg_query($db, $sql);
+      if(!$ret) {
+         echo pg_last_error($db);
+      } else {
+         echo "Table created successfully\n";
+      }
+      }
 
+      pg_close($db);
+?>
