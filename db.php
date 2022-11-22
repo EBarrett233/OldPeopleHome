@@ -11,4 +11,6 @@
       echo "Opened database successfully\n";
    }
 pg_close($db)
+// connection to the db just change the $credintals to your own user and password
 ?>
+
