@@ -17,6 +17,9 @@
          test3            INT     NOT NULL,
          test4        CHAR(50),
          test5         REAL);
+
+         INSERT INTO test1 (ID,test2,test3,test4,test5)
+         VALUES (1, 'Paul', 32, 'California', 20000.00 );
       ";
       $ret = pg_query($db, $sql);
       if(!$ret) {
