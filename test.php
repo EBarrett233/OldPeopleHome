@@ -1,5 +1,7 @@
-<!-- <P>Hello world</P> -->
 
+<?
+require 'db.php';
+?>
 <p>
 
 <form action="test.php">
