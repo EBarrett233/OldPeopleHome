@@ -11,16 +11,80 @@
       echo "Opened database successfully\n";
       echo'test';
       $sql ="
-         CREATE TABLE IF NOT EXISTS test1 
-         (ID INT PRIMARY KEY     NOT NULL,
-         test2           TEXT    NOT NULL,
-         test3            INT     NOT NULL,
-         test4        CHAR(50),
-         test5         REAL);
+         CREATE TABLE IF NOT EXISTS Log_info 
+         (Role       VARCHAR(50)    ,
+         F_Name           TEXT   ,
+         L_Name            INT   ,
+         Email        VARCHAR(50)   ,
+         Phone             INT   ,
+         Password     VARCHAR(50)  ,                     
+         DOB          DATE       ,
+         Fam_Code     VARCHAR(50)   ,
+         Em_Cont      INT        ,
+         Relation    VARCHAR(50)   ,
+         Group1       VARCHAR(50)   ,
+         Add_Date          INT   );
+         
+         CREATE TABLE IF NOT EXISTS Doctors_App 
+         (Role             VARCHAR(50)    ,
+         Patient_ID        VARCHAR(50)    ,            
+         Date_App          DATE           ,
+         Doctor            VARCHAR(50)    ,
+         Pat_Name          VARCHAR(50)    ,
+         Comment           VARCHAR(50)    ,
+         Morning_Meds      VARCHAR(50)    ,
+         Afternoon_Meds    VARCHAR(50)    ,
+         Night_Meds        VARCHAR(50)    
+         );
 
-         INSERT INTO test1 (ID,test2,test3,test4,test5)
-         VALUES (1, 'Paul', 32, 'California', 20000.00 );
-      ";
+         CREATE TABLE IF NOT EXISTS Admin_Con
+         (Role             VARCHAR(50)    ,
+         New_Role          VARCHAR(50)    ,
+         Access_Level      VARCHAR(50)    ,
+         Patient_ID        VARCHAR(50)    ,
+         Total_Due         FLOAT          ,
+         New_Pay           FLOAT          ,
+         Pay_Date          DATE           
+         );
+
+         CREATE TABLE IF NOT EXISTS Patients_Home
+         (Role             VARCHAR(50)    ,
+         Patients_ID       VARCHAR(50)    ,
+         Date_P            DATE           ,
+         Patients_Name     VARCHAR(50)    ,
+         Doc_Name          VARCHAR(50)    ,
+         Doc_App           VARCHAR(50)    ,
+         Care_Name         VARCHAR(50)    ,
+         Mor_Med           VARCHAR(50)    ,
+         Aft_Med           VARCHAR(50)    ,
+         Night_Med         VARCHAR(50)    ,
+         Breakast          VARCHAR(50)    ,
+         Lunch             VARCHAR(50)    ,
+         Dinner            VARCHAR(50)    ,
+         Adm_Date          DATE           ,
+         Age               INT            ,
+         ADMITTED          VARCHAR(50)    
+         );
+
+         CREATE TABLE IF NOT EXISTS Emp_INFO
+         (Role             VARCHAR(50)    ,
+         Emp_ID1                INT            ,
+         Name              VARCHAR(50)    ,
+         Salary            FlOAT          ,
+         Emp_ID            INT            ,
+         New_Salary        FLOAT          
+         );
+
+         CREATE TABLE IF NOT EXISTS Roster
+         (Role             VARCHAR(50)    ,
+         Supervisor        VARCHAR(50)    ,
+         Doctor            VARCHAR(50)    ,
+         Caregiver         VARCHAR(50)    ,
+         Group_R             VARCHAR(50)    ,
+         Date_R            DATE           
+         );
+      "
+      ;
       $ret = pg_query($db, $sql);
       if(!$ret) {
          echo pg_last_error($db);
@@ -28,6 +92,6 @@
          echo "Table created successfully\n";
       }
       }
-
+   // write $test function and use include or required on seprate files to keep the db functions on this page to transfer to other pages when the time comes
       pg_close($db);
 ?>
