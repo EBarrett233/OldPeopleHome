@@ -25,5 +25,4 @@
     <input type="text" placeholder="food" name="Lunch">
     <label for="Dinner"><b>Dinner:</b></label>
     <input type="text" placeholder="food" name="Dinner">
-
     </div>
