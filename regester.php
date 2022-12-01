@@ -20,22 +20,22 @@
     <option value="family">Family</option>
     </select>
     <label for="first"><b>First Name:</b></label>
-    <input type="text" placeholder="First name" name="first">
+    <input type="text" placeholder="First name" name="first" required>
 
     <label for="last"><b>Last Name:</b></label>
-    <input type="text" placeholder="Last name" name="last">
+    <input type="text" placeholder="Last name" name="last" required>
 
     <label for="phone"><b>Phone Number:</b></label>
-    <input type="text" placeholder="Phone Num" name="phone">
+    <input type="text" placeholder="Phone Num" name="phone" required>
     
     <label for="email"><b>Enter Email:</b></label>
-    <input type="text" placeholder="Enter Email" name="email">
+    <input type="text" placeholder="Enter Email" name="email" required>
 
     <label for="pwd"><b>Password:</b></label>
-    <input type="password" placeholder="Enter Password" name="pwd">
+    <input type="password" placeholder="Enter Password" name="pwd" required>
 
     <label for="dob"><b>Date of Birth:</b></label>
-    <input type="text" placeholder="Date of Birth" name="dob">
+    <input type="date" placeholder="Date of Birth" name="dob" required>
 
     <hr>
     <br>
@@ -50,7 +50,7 @@
     <button type="submit" class="registerbtn"><strong>Register</strong></button>
     </div>
     <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
+    <p>Already have an account? <a href="login.php">Sign in</a>.</p>
     </div>
 </form>
 </html>
@@ -70,7 +70,6 @@
         // $pwd = mysqli_real_escape_string($con, $pwd);
         $dob = $_REQUEST['dob'];
         // $dob = mysqli_real_escape_string($con, $dob);
-        
         $db=db_connect($host,$port,$dbname,$credentials);
         $sql = " INSERT into Log_info (F_Name,L_Name,phone,Email,Pwd,DOB)
         VALUES
@@ -79,26 +78,5 @@
         if (! $ret)
             echo pg_last_error($db);
             exit();
-        
-
-
-
-
-
-        // $create_datetime = date("Y-m-d H:i:s");
-        // $query    = "INSERT into `users` (username, password, email, create_datetime)
-        //             VALUES ('$username', '" . md5($password) . "', '$email', '$create_datetime')";
-        // $result   = mysqli_query($con, $query);
-        // if ($result) {
-        //     echo "<div class='form'>
-        //         <h3>You are registered successfully.</h3><br/>
-        //         <p class='link'>Click here to <a href='login.php'>Login</a></p>
-        //         </div>";
-        // } else {
-        //     echo "<div class='form'>
-        //         <h3>Required fields are missing.</h3><br/>
-        //         <p class='link'>Click here to <a href='registration.php'>registration</a> again.</p>
-        //         </div>";
-        // }
     } 
 ?>
