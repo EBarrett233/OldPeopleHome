@@ -87,7 +87,12 @@
          Group_R            VARCHAR(50)    ,
          Date_R            DATE           
          );
+
+         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB)
+         VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05');
+
       "
+
       ;
       $ret = pg_query($db, $sql);
       if(!$ret) {
