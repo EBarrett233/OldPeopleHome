@@ -15,7 +15,14 @@
     <input type="text" placeholder="Name" name="CareName">
     <label for="MorningMed"><b>Morning Medicine:</b></label>
     <input type="text" placeholder="Med" name="MorningMed">
-    <label for="MorningMed"><b>Morning Medicine:</b></label>
-    <input type="text" placeholder="Med" name="MorningMed">
-<!-- test -->
+    <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
+    <input type="text" placeholder="Med" name="AfternoonMed">
+    <label for="NightMed"><b>Night Medicine:</b></label>
+    <input type="text" placeholder="Med" name="NightMed">
+    <label for="Breakfast"><b>Breakfast:</b></label>
+    <input type="text" placeholder="food" name="Breakfast">
+    <label for="Lunch"><b>Lunch:</b></label>
+    <input type="text" placeholder="food" name="Lunch">
+    <label for="Dinner"><b>Dinner:</b></label>
+    <input type="text" placeholder="food" name="Dinner">
     </div>
