@@ -19,6 +19,8 @@
 
 <?php
     require('db.php');
+    $admin_user='admin@admin.com';
+    $admin_pass='admin77';
     if (isset($_REQUEST['email'])) {
         $email=$_REQUEST['email'];
         $pwd=$_REQUEST['pwd'];
@@ -36,7 +38,7 @@
             header("Location:Admin_Home.html");
         }
         echo "<br>";
-        echo'wrong info fag';
+        echo'wrong info gabe proll messed with the code so if you ever see this message punch the hell out of GABE DOMBACH';
 
     }
 ?>

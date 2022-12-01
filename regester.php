@@ -10,15 +10,15 @@
     <h1>Register Here</h1>
     <p>Please fill in the details to create an account with us.</p>
     <hr>
-    <label for="role"><b>Role:</b></label>
+    <!-- <label for="role"><b>Role:</b></label>
     <select name="Role" id="role">
-    <option value="admin">Admin</option>
+    <option value="admin" >Admin</option>
     <option value="docter">Doctor</option>
     <option value="nurse">Nurse</option>
     <option value="patient">Patient</option>
     <option value="caregiver">Caregiver</option>
     <option value="family">Family</option>
-    </select>
+    </select> -->
     <label for="first"><b>First Name:</b></label>
     <input type="text" placeholder="First name" name="first" required>
 
