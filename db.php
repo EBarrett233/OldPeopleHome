@@ -1,8 +1,13 @@
 <?php
+
    $host        = "host = 127.0.0.1";
    $port        = "port = 5432";
    $dbname      = "dbname = Old_People";
    $credentials = "user = daneshaut password=Dane#5503";
+
+   function db_connect($host,$port,$dbname,$credentials){
+      return pg_connect( "$host $port $dbname $credentials"  );
+   }
 
    $db = pg_connect( "$host $port $dbname $credentials"  );
    if(!$db) {
@@ -13,11 +18,11 @@
       $sql ="
          CREATE TABLE IF NOT EXISTS Log_info 
          (Role       VARCHAR(50)    ,
-         F_Name           TEXT   ,
-         L_Name            INT   ,
+         F_Name      VARCHAR(50)   ,
+         L_Name       VARCHAR(50)   ,
          Email        VARCHAR(50)   ,
-         Phone             INT   ,
-         Password     VARCHAR(50)  ,                     
+         Phone        VARCHAR(50)  ,
+         Pwd     VARCHAR(50)  ,                     
          DOB          DATE       ,
          Fam_Code     VARCHAR(50)   ,
          Em_Cont      INT        ,
@@ -98,29 +103,29 @@
 ?>
 
 <?php
-   $host        = "host = 127.0.0.1";
-   $port        = "port = 5432";
-   $dbname      = "dbname = Old_People";
-   $credentials = "user = daneshaut password=Dane#5503";
+//    $host        = "host = 127.0.0.1";
+//    $port        = "port = 5432";
+//    $dbname      = "dbname = Old_People";
+//    $credentials = "user = daneshaut password=Dane#5503";
 
-   $db = pg_connect( "$host $port $dbname $credentials"  );
-   if(!$db) {
-      echo "Error : Unable to open database\n";
-   } else {
-      echo "Opened database successfully\n";
-   }
+//    $db = pg_connect( "$host $port $dbname $credentials"  );
+//    if(!$db) {
+//       echo "Error : Unable to open database\n";
+//    } else {
+//       echo "Opened database successfully\n";
+//    }
 
-   $sql ="
-      INSERT INTO Roster (Role,Supervisor,Doctor,Caregiver,Group_R,Date_R)
-      VALUES ('test','test','test','test','test','2001-01-01');
+//    $sql ="
+//       INSERT INTO Roster (Role,Supervisor,Doctor,Caregiver,Group_R,Date_R)
+//       VALUES ('test','test','test','test','test','2001-01-01');
 
-"
-;
-   $ret = pg_query($db, $sql);
-   if(!$ret) {
-      echo pg_last_error($db);
-   } else {
-      echo "Records created successfully\n";
-   }
-   pg_close($db);
+// "
+// ;
+//    $ret = pg_query($db, $sql);
+//    if(!$ret) {
+//       echo pg_last_error($db);
+//    } else {
+//       echo "Records created successfully\n";
+//    }
+//    pg_close($db);
 ?>
