@@ -132,4 +132,11 @@
 //       echo "Records created successfully\n";
 //    }
 //    pg_close($db);
+
+
+
+// UPDATE table_name
+// SET column1 = value1, column2 = value2...., columnN = valueN
+// WHERE [condition];
+// example of update query for when admin has to assign a role in the role.php file
 ?>

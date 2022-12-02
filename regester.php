@@ -5,20 +5,19 @@
 <!DOCTYPE html>
 <html>
 
-<form class="form" method="post" name="Register" action="">
+<form class="form" method="POST" name="Register" action="#">
     <div class="container">
     <h1>Register Here</h1>
     <p>Please fill in the details to create an account with us.</p>
     <hr>
-    <!-- <label for="role"><b>Role:</b></label>
-    <select name="Role" id="role">
-    <option value="admin" >Admin</option>
-    <option value="docter">Doctor</option>
-    <option value="nurse">Nurse</option>
-    <option value="patient">Patient</option>
-    <option value="caregiver">Caregiver</option>
-    <option value="family">Family</option>
-    </select> -->
+    <label for="role"><b>Role:</b></label>
+    <select name="role" id="role">
+    <option  name="doctor" value="doctor">Doctor</option>
+    <option  name="nurse" value="nurse">Nurse</option>
+    <option  name="patient" value="patient">Patient</option>
+    <option  name="caregiver" value="caregiver">Caregiver</option>
+    <option  name="family" value="family">Family</option>
+    </select>
     <label for="first"><b>First Name:</b></label>
     <input type="text" placeholder="First name" name="first" required>
 
@@ -47,7 +46,7 @@
     <label for="relation emergency"><b>Relation to Emergency Contact:</b></label>
     <input type="text" placeholder="Relation to Emergency Contact" name="emergency relation">
     <hr>
-    <button type="submit" class="registerbtn"><strong>Register</strong></button>
+    <button type="submit" name='submit' class="registerbtn"><strong>Register</strong></button>
     </div>
     <div class="container signin">
     <p>Already have an account? <a href="login.php">Sign in</a>.</p>
@@ -57,7 +56,26 @@
 
 <?php
     require('db.php');
-    if (isset($_REQUEST['first'])) {
+    if (isset($_POST['submit'])) {
+        $role=$_POST['role'];
+
+        
+        // if ( $_POST['role']=='doctor') {
+        //     $role='doctor';
+        // }
+        // elseif($_POST['role']=='nurse'){
+        //     $role='nurse';
+        // }
+        // elseif($_POST['role']=='caregiver'){
+        //     $role='caregiver';
+        // }
+        // elseif($_POST['role']=='family'){
+        //     $role='family';
+        // }
+        // else{
+        //     $role='patient';
+        // }
+
         $first = $_REQUEST['first'];
         // $first = mysqli_real_escape_string($con, $first);
         $last=$_REQUEST['last'];
@@ -71,9 +89,9 @@
         $dob = $_REQUEST['dob'];
         // $dob = mysqli_real_escape_string($con, $dob);
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql = " INSERT into Log_info (F_Name,L_Name,phone,Email,Pwd,DOB)
+        $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB)
         VALUES
-        ('$first','$last','$phone','$email','$pwd','$dob');";
+        ('$role','$first','$last','$phone','$email','$pwd','$dob');";
         $ret = pg_query($db,$sql);
         if (! $ret)
             echo pg_last_error($db);
