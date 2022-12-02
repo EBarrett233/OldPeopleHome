@@ -18,4 +18,8 @@
     <label for="MorningMed"><b>Morning Medicine:</b></label>
     <input type="text" placeholder="Med" name="MorningMed">
 <!-- test -->
+<a href="New_roster.php">Make New Roster</a>
+<a href="Roster.php">Current Roster</a>
+<a href="role.php">Role</a>
+<a href="payment.php">Payment</a>
     </div>
