@@ -12,8 +12,8 @@
    if(!$db) {
       echo "Error : Unable to open database\n";
    } else {
-      echo "Opened database successfully\n";
-      echo'test';
+      // echo "Opened database successfully\n";
+      // echo'test';
       $sql ="
          CREATE TABLE IF NOT EXISTS Log_info 
          (Role       VARCHAR(50)    ,
@@ -98,7 +98,7 @@
       if(!$ret) {
          echo pg_last_error($db);
       } else {
-         echo "Table created successfully\n";
+         // echo "Table created successfully\n";
       }
       }
    // write $test function and use include or required on seprate files to keep the db functions on this page to transfer to other pages when the time comes

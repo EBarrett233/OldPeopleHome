@@ -29,13 +29,18 @@
         
         $ret= pg_query($db, $sql);
         if (! $ret){
-            echo pg_last_error($db);
+            // echo pg_last_error($db);
+            // leave commented unless DB error
             exit();
             }
         $rows=pg_fetch_all($ret);
         foreach($rows as $row){
-            if ($row['pwd']==$_POST['pwd'])
-            header("Location:Admin_Home.html");
+            if ($_POST['pwd'] ==$admin_pass && $_POST['email'] == $admin_user)
+            header("Location:Admin_Home.php");
+            // if statement for admin login admin info is hardcodded as above untill more funtions are working
+            elseif ($row['pwd']==$_POST['pwd'])
+            header("Location:role.php");
+            // checks user info and takes to this page WILL CHANGE when home page is added
         }
         echo "<br>";
         echo'wrong info gabe proll messed with the code so if you ever see this message punch the hell out of GABE DOMBACH';
