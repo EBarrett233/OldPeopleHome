@@ -4,8 +4,11 @@
 
 <!DOCTYPE html>
 <html>
-
+ Dev_Ezra
+<link rel="stylesheet" type="text/css" href="regester.css" />
+<form class="form" method="post" name="Register" action="">
 <form class="form" method="POST" name="Register" action="#">
+
     <div class="container">
     <h1>Register Here</h1>
     <p>Please fill in the details to create an account with us.</p>
