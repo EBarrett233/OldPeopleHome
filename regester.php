@@ -89,9 +89,9 @@
         $dob = $_REQUEST['dob'];
         // $dob = mysqli_real_escape_string($con, $dob);
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB)
+        $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB,Approval)
         VALUES
-        ('$role','$first','$last','$phone','$email','$pwd','$dob');";
+        ('$role','$first','$last','$phone','$email','$pwd','$dob','Not Approved');";
         $ret = pg_query($db,$sql);
         if (! $ret)
             echo pg_last_error($db);
