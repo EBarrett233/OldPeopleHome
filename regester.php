@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" type="text/css" href="regester.css" />
 <form class="form" method="post" name="Register" action="">
     <div class="container">
     <h1>Register Here</h1>
