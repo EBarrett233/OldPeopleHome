@@ -4,8 +4,13 @@
 
 <!DOCTYPE html>
 <html>
+<<<<<<<<< Temporary merge branch 1
 
 <form class="form" method="POST" name="Register" action="#">
+=========
+<link rel="stylesheet" type="text/css" href="regester.css" />
+<form class="form" method="post" name="Register" action="">
+>>>>>>>>> Temporary merge branch 2
     <div class="container">
     <h1>Register Here</h1>
     <p>Please fill in the details to create an account with us.</p>
