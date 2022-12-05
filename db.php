@@ -12,14 +12,14 @@
    if(!$db) {
       echo "Error : Unable to open database\n";
    } else {
-      echo "Opened database successfully\n";
-      echo'test';
+      // echo "Opened database successfully\n";
+      // echo'test';
       $sql ="
          CREATE TABLE IF NOT EXISTS Log_info 
          (Role       VARCHAR(50)    ,
          F_Name      VARCHAR(50)   ,
          L_Name       VARCHAR(50)   ,
-         Email        VARCHAR(50)   ,
+         Email        VARCHAR(50)  UNIQUE ,
          Phone        VARCHAR(50)  ,
          Pwd     VARCHAR(50)  ,                     
          DOB          DATE       ,
@@ -27,7 +27,8 @@
          Em_Cont      INT        ,
          Relation    VARCHAR(50)   ,
          Group1       VARCHAR(50)   ,
-         Add_Date          INT   );
+         Add_Date          INT,   
+         Approval       VARCHAR(50)    );
          
          CREATE TABLE IF NOT EXISTS Doctors_App 
          (Role             VARCHAR(50)    ,
@@ -88,8 +89,9 @@
          Date_R            DATE           
          );
 
-         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB)
-         VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05');
+         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
+         VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
+         ON CONFLICT DO NOTHING;
 
       "
 
@@ -98,7 +100,7 @@
       if(!$ret) {
          echo pg_last_error($db);
       } else {
-         echo "Table created successfully\n";
+         // echo "Table created successfully\n";
       }
       }
    // write $test function and use include or required on seprate files to keep the db functions on this page to transfer to other pages when the time comes
@@ -132,4 +134,11 @@
 //       echo "Records created successfully\n";
 //    }
 //    pg_close($db);
+
+
+
+// UPDATE table_name
+// SET column1 = value1, column2 = value2...., columnN = valueN
+// WHERE [condition];
+// example of update query for when admin has to assign a role in the role.php file\
 ?>
