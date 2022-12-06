@@ -13,7 +13,8 @@
     <input type="text" placeholder="Med" name="AfternoonMed">
     <label for="NightMed"><b>Night Medicine:</b></label>
     <input type="text" placeholder="Med" name="NightMed">
-    <button type="submit" class="continue"><strong>New </strong></button>
+    <button type="submit" class="continue">
+    <strong>New </strong></button>
     
     
     </div>
