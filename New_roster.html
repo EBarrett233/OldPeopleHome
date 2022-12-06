@@ -1,10 +1,20 @@
-<html> 
-
-<header>
-    New Roster
-</header>
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="New_roster.css" />
+<head>
+    <div class="title">
+    <a href="Additional_Info_for_Patient.php">Patient Info</a>
+    <a href="Doctor_Appointment.php">Doctor Appointment</a>
+    <a href="role.php">Role</a>
+    <a href="Patient_Home.php">Patient Home</a>
+    <a href="Roster.php">Current Roster</a>
+    <a href="New_Roster">Make a new Roster</a>
+    <a href="payment.php">Make a Payment</a>
+</div>
+</head>
 
 <form>  
+    <h1>New Roster</h1>
+    <div class="container">
     <label> Select Supervisor </label>  
     <select>  
     <option value = "BMW"> BMW   
@@ -89,6 +99,7 @@
     </select>  
     </form> 
 
+</div>
 <button>Ok</button>
 
 <button>Cancel</button>
