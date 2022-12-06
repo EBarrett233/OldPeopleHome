@@ -27,7 +27,7 @@
          Em_Cont      INT        ,
          Relation    VARCHAR(50)   ,
          Group1       VARCHAR(50)   ,
-         Add_Date          INT,   
+         Add_Date          DATE,   
          Approval       VARCHAR(50)    );
          
          CREATE TABLE IF NOT EXISTS Doctors_App 
