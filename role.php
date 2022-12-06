@@ -32,7 +32,7 @@
         }
 if (isset($_POST['submit'])) {
     $email=$_POST['email'];
-    $role=$_POST['role'];
+    // $role=$_POST['role'];
     // $role=$_REQUEST['role'];
             $sql = " UPDATE Log_info
             SET Approval='Approved'
