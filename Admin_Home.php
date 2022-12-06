@@ -26,3 +26,11 @@
     <label for="Dinner"><b>Dinner:</b></label>
     <input type="text" placeholder="food" name="Dinner">
     </div>
+
+    <a href="Additional_Info_for_Patient.php">Patient Info</a>
+    <a href="Doctor_Appointment.php">Doctor Appointment</a>
+    <a href="role.php">Role</a>
+    <a href="Patient_Home.php">Patient Home</a>
+    <a href="Roster.php">Current Roster</a>
+    <a href="New_Roster">Make a new Roster</a>
+    <a href="payment.php">Make a Payment</a>

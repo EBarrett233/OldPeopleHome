@@ -1,16 +1,12 @@
-
-
-
-
 <!DOCTYPE html>
 <html>
-
 <form class="form" method="POST" name="Register" action="#">
-    <div class="container">
+<link rel="stylesheet" type="text/css" href="regester.css" />
+<form class="form" method="post" name="Register" action="">
     <h1>Register Here</h1>
     <p>Please fill in the details to create an account with us.</p>
-    <hr>
-    <label for="role"><b>Role:</b></label>
+    <div class="container">
+    <label class="role" for="role"><b>Role:</b></label>
     <select name="role" id="role">
     <option  name="doctor" value="doctor">Doctor</option>
     <option  name="nurse" value="nurse">Nurse</option>
@@ -36,21 +32,18 @@
     <label for="dob"><b>Date of Birth:</b></label>
     <input type="date" placeholder="Date of Birth" name="dob" required>
 
-    <hr>
-    <br>
-    <hr>
+    <button type="submit" name='submit' class="registerbtn"><strong>Register</strong></button>
+
+    </div>
+    <div class="container">
     <label for="family code"><b>Family Code(For Patient Family Member):</b></label>
     <input type="text" placeholder="Family Code" name="family code">
     <label for="emergency"><b>Emergency Contact:</b></label>
     <input type="text" placeholder="Emergency Contact" name="emergency">
     <label for="relation emergency"><b>Relation to Emergency Contact:</b></label>
     <input type="text" placeholder="Relation to Emergency Contact" name="emergency relation">
-    <hr>
-    <button type="submit" name='submit' class="registerbtn"><strong>Register</strong></button>
     </div>
-    <div class="container signin">
     <p>Already have an account? <a href="login.php">Sign in</a>.</p>
-    </div>
 </form>
 </html>
 
