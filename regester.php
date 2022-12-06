@@ -59,35 +59,12 @@
     if (isset($_POST['submit'])) {
         $role=$_POST['role'];
 
-        
-        // if ( $_POST['role']=='doctor') {
-        //     $role='doctor';
-        // }
-        // elseif($_POST['role']=='nurse'){
-        //     $role='nurse';
-        // }
-        // elseif($_POST['role']=='caregiver'){
-        //     $role='caregiver';
-        // }
-        // elseif($_POST['role']=='family'){
-        //     $role='family';
-        // }
-        // else{
-        //     $role='patient';
-        // }
-
         $first = $_REQUEST['first'];
-        // $first = mysqli_real_escape_string($con, $first);
         $last=$_REQUEST['last'];
-        // $last=mysqli_real_escape_string($con, $last);
         $phone = $_REQUEST['phone'];
-        // $phone = mysqli_real_escape_string($con, $phone);
         $email = $_REQUEST['email'];
-        // $email = mysqli_real_escape_string($con, $email);
         $pwd = $_REQUEST['pwd'];
-        // $pwd = mysqli_real_escape_string($con, $pwd);
         $dob = $_REQUEST['dob'];
-        // $dob = mysqli_real_escape_string($con, $dob);
         $db=db_connect($host,$port,$dbname,$credentials);
         $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB,Approval)
         VALUES
