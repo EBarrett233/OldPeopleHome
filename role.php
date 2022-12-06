@@ -29,6 +29,8 @@
             echo $row ['email'].'<br>';
             echo ' Users Role: '.$row ['role'].'<br>';
             echo 'This users Role is '.$row['approval'].'<br>';
+            
+
         }
 if (isset($_POST['submit'])) {
     $email=$_POST['email'];
