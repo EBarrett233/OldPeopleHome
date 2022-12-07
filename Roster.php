@@ -17,35 +17,65 @@
 
 <div>
     <p>Supervisor</p>
-    <p> placeholder Name</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Supervisor';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
 </div>
 
 <div>
     <p>Doctor</p>
-    <p>placeholder Name</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Doctor';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
 </div>
 
 <div>
     <p>Caregiver1</p>
-    <p>placeholder Name</p>
-    <p>placeholder Patient group</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
+    <p>Patient group 1</p>
 </div>
 
 <div>
     <p>Caregiver2</p>
-    <p>Placeholder Name</p>
-    <p>Placeholder Patient group</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
+    <p>Patient group 2</p>
 </div>
 
 <div>
     <p>Caregiver3</p>
-    <p>placeholder Name</p>
-    <p>Placeholder Patient group</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
+    <p>Patient group 3</p>
 </div>
 
 <div>
     <p>Caregiver4</p>
-    <p>Placeholder Name</p>
-    <p>Placeholder Patient group</p>
+    <?php
+    $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    ?>
+    <p>Patient group 4</p>
 </div>
 </div>
