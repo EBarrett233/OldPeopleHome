@@ -1,4 +1,16 @@
 <html>
+<link rel="stylesheet" type="text/css" href="role.css" />
+<head>
+    <div class="title">
+    <a href="Additional_Info_for_Patient.php">Patient Info</a>
+    <a href="Doctor_Appointment.php">Doctor Appointment</a>
+    <a href="role.php">Role</a>
+    <a href="Patient_Home.php">Patient Home</a>
+    <a href="Roster.php">Current Roster</a>
+    <a href="New_Roster">Make a new Roster</a>
+    <a href="payment.php">Make a Payment</a>
+</div>
+</head>
 
 <!-- <header>
     Role
@@ -6,7 +18,7 @@
 
 
 <div>
-    <p>Role</p>
+    <h1>Role</h1>
     <p>Emails in system</p>
 </div>
 
@@ -33,6 +45,7 @@ require('db.php');
         }
 ?>
 
+<div class="container">
 <div>
     <p>Email to approve</p>
     <input placeholder="email" name='email'>
@@ -42,7 +55,7 @@ require('db.php');
     <p>Access Level</p>
     <input placeholder="role for email selected" name='role'>
 </div>
-
+</div>
 <button>Ok</button>
 
 <button>Cancel</button>
