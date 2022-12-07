@@ -40,3 +40,13 @@
     <label for="Dinner"><b>Dinner:</b></label>
     <input type="checkbox" placeholder="food" name="Dinner">
     </div>
+
+    <?php
+
+
+
+
+
+
+
+?>
