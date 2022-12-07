@@ -1,7 +1,19 @@
 <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="Patient_of_doctor.css" />
+<head>
+    <div class="title">
+    <a href="Additional_Info_for_Patient.php">Patient Info</a>
+    <a href="Doctor_Appointment.php">Doctor Appointment</a>
+    <a href="role.php">Role</a>
+    <a href="Patient_Home.php">Patient Home</a>
+    <a href="Roster.php">Current Roster</a>
+    <a href="New_Roster">Make a new Roster</a>
+    <a href="payment.php">Make a Payment</a>
+</div>
+</head>
 <form>
-    <div class="container">
     <h1>Patient of Docter</h1>
+    <div class="container">
     
     <label for="AppointDate"><b>Date</b></label>
     <input type="date" placeholder="Date" name="AppointDate">
