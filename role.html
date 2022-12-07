@@ -34,7 +34,8 @@
 </div>
 <button type="submit" name='submit'><strong>submit</strong></button>
     </form>
-</html>
+    
+<div class="container">
 
 <?php
 
@@ -56,22 +57,7 @@
             echo 'This users Role is'.$row['approval'].'<br>';
         }
 ?>
-
-<div class="container">
-<div>
-    <p>Email to approve</p>
-    <input placeholder="email" name='email'>
 </div>
-
-<div>
-    <p>Access Level</p>
-    <input placeholder="role for email selected" name='role'>
-</div>
-</div>
-<button>Ok</button>
-
-<button>Cancel</button>
-
 </html>
 
 <?php
