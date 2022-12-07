@@ -36,7 +36,7 @@
             header("Location:Admin_Home.php");
             // if statement for admin login admin info is hardcodded as above untill more funtions are working
             elseif ($row['pwd']==$_POST['pwd'])
-            header("Location:role.php");
+            header("Location:Patient_Home.php");
             // checks user info and takes to this page WILL CHANGE when home page is added
         }
         echo "<br>";
