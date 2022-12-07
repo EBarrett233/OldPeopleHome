@@ -1,7 +1,19 @@
 <html>
-    <header>Payment</header>
+<link rel="stylesheet" type="text/css" href="payment.css" />
+<head>
+    <div class="title">
+    <a href="Additional_Info_for_Patient.php">Patient Info</a>
+    <a href="Doctor_Appointment.php">Doctor Appointment</a>
+    <a href="role.php">Role</a>
+    <a href="Patient_Home.php">Patient Home</a>
+    <a href="Roster.php">Current Roster</a>
+    <a href="New_Roster">Make a new Roster</a>
+    <a href="payment.php">Make a Payment</a>
+</div>
+</head>
+    <h1>Payment</h1>
 
-    <div>
+    <div class="container">
         <p>Patient ID</p>
         <imput type = 'text' placeholder = 'Patient ID'></imput>
 

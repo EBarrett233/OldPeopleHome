@@ -1,4 +1,5 @@
-<!DOCTYPE html><link rel="stylesheet" type="text/css" href="Admin_Home.css" />
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="Admin_Home.css" />
 <head>
     <div class="title">
     <a href="Additional_Info_for_Patient.php">Patient Info</a>
