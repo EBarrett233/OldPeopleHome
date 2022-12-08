@@ -67,7 +67,7 @@
          Lunch             VARCHAR(50)    ,
          Dinner            VARCHAR(50)    ,
          Adm_Date          DATE           ,
-         Age               INT            ,
+         DOB               DATE            ,
          ADMITTED          VARCHAR(50)    
          );
 

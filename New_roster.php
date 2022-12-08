@@ -12,95 +12,113 @@
 </div>
 </head>
 
-<form>  
+<form method="POST">>  
     <h1>New Roster</h1>
     <div class="container">
     <label> Select Supervisor </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
+
+    <select name="sup" id="sup"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Supervisor';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
+
+</select> 
     </form> 
 
-<form>  
-    <label> Select Doctar </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
-    </form> 
+<form method="POST">>  
+    <select name="doc" id="doc"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Doctor';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
 
+</select>
 
-<form>  
+</form>
+
+<form method="POST">>  
     <label> Select Cargiver 1 </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
+    <select name="doc" id="doc"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
+
+</select> 
     </form> 
 
-    <form>  
+    <form method="POST">>  
     <label> Select Cargiver 2 </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
+    <select name="doc" id="doc"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
+
+</select>  
     </form> 
 
-    <form>  
+    <form method="POST">>   
     <label> Select Cargiver 3 </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
+    <select name="doc" id="doc"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
+
+</select>  
     </form> 
 
-    <form>  
+    <form method="POST">  
     <label> Select Cargiver 4 </label>  
-    <select>  
-    <option value = "BMW"> BMW   
-    </option>  
-    <option value = "Mercedes"> Mercedes   
-    </option>  
-    <option value = "Audi"> Audi  
-    </option>  
-    <option value = "Skoda"> Skoda  
-    </option>  
-    </select>  
+    <select name="doc" id="doc"> 
+    <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
+    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $ret = pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+    foreach ($rows as $row) {
+        echo "<option value=" . strval($row['fname']) . "</option>";
+    }
+    ?>
+
+</select>   
     </form> 
 
 </div>
-<button>Ok</button>
+<button type="submit">Ok</button>
 
 <button>Cancel</button>
 
