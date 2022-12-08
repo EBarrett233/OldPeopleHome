@@ -19,6 +19,8 @@
 
     <select name="sup" id="sup"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Supervisor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -33,6 +35,8 @@
 <form>  
     <select name="doc" id="doc"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Doctor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -49,6 +53,8 @@
     <label> Select Cargiver 1 </label>  
     <select name="doc" id="doc"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -64,6 +70,8 @@
     <label> Select Cargiver 2 </label>  
     <select name="doc" id="doc"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -79,6 +87,8 @@
     <label> Select Cargiver 3 </label>  
     <select name="doc" id="doc"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -94,6 +104,8 @@
     <label> Select Cargiver 4 </label>  
     <select name="doc" id="doc"> 
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
