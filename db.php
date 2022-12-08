@@ -86,7 +86,8 @@
          Doctor            VARCHAR(50)    ,
          Caregiver         VARCHAR(50)    ,
          Group_R            VARCHAR(50)    ,
-         Date_R            DATE           
+         Date_R            DATE           ,
+         f_Name              VARCHAR  (50)
          );
 
          INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
