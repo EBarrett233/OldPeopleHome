@@ -12,7 +12,7 @@
 </div>
 </head>
 
-<form>  
+<form method="POST">>  
     <h1>New Roster</h1>
     <div class="container">
     <label> Select Supervisor </label>  
@@ -32,7 +32,7 @@
 </select> 
     </form> 
 
-<form>  
+<form method="POST">>  
     <select name="doc" id="doc"> 
     <?php
     require("db.php");
@@ -49,7 +49,7 @@
 
 </form>
 
-<form>  
+<form method="POST">>  
     <label> Select Cargiver 1 </label>  
     <select name="doc" id="doc"> 
     <?php
@@ -66,7 +66,7 @@
 </select> 
     </form> 
 
-    <form>  
+    <form method="POST">>  
     <label> Select Cargiver 2 </label>  
     <select name="doc" id="doc"> 
     <?php
@@ -83,7 +83,7 @@
 </select>  
     </form> 
 
-    <form>  
+    <form method="POST">>   
     <label> Select Cargiver 3 </label>  
     <select name="doc" id="doc"> 
     <?php
@@ -100,7 +100,7 @@
 </select>  
     </form> 
 
-    <form>  
+    <form method="POST">  
     <label> Select Cargiver 4 </label>  
     <select name="doc" id="doc"> 
     <?php
@@ -118,7 +118,7 @@
     </form> 
 
 </div>
-<button>Ok</button>
+<button type="submit">Ok</button>
 
 <button>Cancel</button>
 
