@@ -20,7 +20,9 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE role = 'Supervisor';";
+
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";
