@@ -18,7 +18,8 @@
 <div>
     <p>Supervisor</p>
     <?php
-    
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Supervisor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -29,6 +30,8 @@
 <div>
     <p>Doctor</p>
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Doctor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -39,6 +42,8 @@
 <div>
     <p>Caregiver1</p>
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -50,6 +55,8 @@
 <div>
     <p>Caregiver2</p>
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -61,6 +68,8 @@
 <div>
     <p>Caregiver3</p>
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -72,6 +81,8 @@
 <div>
     <p>Caregiver4</p>
     <?php
+    require("db.php");
+    $db = db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT fname FROM Roster WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
