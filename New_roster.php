@@ -22,11 +22,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Supervisor';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Supervisor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
@@ -38,11 +38,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Doctor';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Doctor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
@@ -56,11 +56,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
@@ -73,11 +73,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
@@ -90,11 +90,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
@@ -107,11 +107,11 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT fname FROM Log_info WHERE role = 'Caregiver';";
+    $sql = "SELECT f_name FROM Log_info WHERE role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo "<option value=" . strval($row['fname']) . "</option>";
+        echo "<option value=" . strval($row['f_name']) . "</option>";
     }
     ?>
 
