@@ -9,6 +9,7 @@
     <a href="Roster.php">Current Roster</a>
     <a href="New_Roster">Make a new Roster</a>
     <a href="payment.php">Make a Payment</a>
+    <a href="employee.php">Employee</a>
 </div>
 </head>
 
@@ -21,7 +22,7 @@
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
 
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Supervisor';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Supervisor';";
 
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
@@ -34,7 +35,7 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Doctor';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Doctor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";
@@ -46,7 +47,7 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Caregiver';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";
@@ -59,7 +60,7 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Caregiver';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";
@@ -72,7 +73,7 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Caregiver';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";
@@ -85,7 +86,7 @@
     <?php
     require("db.php");
     $db = db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT f_Name FROM Roster WHERE role = 'Caregiver';";
+    $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         echo "<option value=" . strval($row['f_Name']) . "</option>";

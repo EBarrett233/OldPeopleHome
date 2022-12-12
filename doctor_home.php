@@ -9,6 +9,7 @@
     <a href="Roster.php">Current Roster</a>
     <a href="New_Roster">Make a new Roster</a>
     <a href="payment.php">Make a Payment</a>
+    <a href="employee.php">Employee</a>
 </div>
 </head>
 <h1>Doctor Home</h1>
