@@ -24,11 +24,3 @@
     <input type="text" placeholder="Salary" name="Salary">
     
 </div>
-
-<h1>New Employee Info</h1>
-<div class="container">
-    <label for="EmpID"><b>ID:</b></label>
-    <input type="text" placeholder="ID" name="EmpID">
-    <label for="Salary"><b>Salary:</b></label>
-    <input type="text" placeholder="Salary" name="Salary">
-</div>
