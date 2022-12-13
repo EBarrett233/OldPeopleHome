@@ -26,31 +26,34 @@
 
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
-        echo "<option value=" . strval($row['f_Name']) . "</option>";
+    foreach($rows as $row) {
+        echo "<option value=" . strval($row['f_Name']) . "</option>";}
     ?>
 </div>
 
 <div>
     <p>Doctor</p>
     <?php
-    require("db.php");
-    $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE Role = 'Doctor';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    foreach($rows as $row) {
         echo "<option value=" . strval($row['f_Name']) . "</option>";
+    }
     ?>
 </div>
 
 <div>
     <p>Caregiver1</p>
     <?php
-    require("db.php");
-    $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    foreach($rows as $row) {
         echo "<option value=" . strval($row['f_Name']) . "</option>";
+    }
     ?>
     <p>Patient group 1</p>
 </div>
@@ -58,12 +61,13 @@
 <div>
     <p>Caregiver2</p>
     <?php
-    require("db.php");
-    $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    foreach($rows as $row) {
         echo "<option value=" . strval($row['f_Name']) . "</option>";
+    }
     ?>
     <p>Patient group 2</p>
 </div>
@@ -71,12 +75,13 @@
 <div>
     <p>Caregiver3</p>
     <?php
-    require("db.php");
-    $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    foreach($rows as $row) {
         echo "<option value=" . strval($row['f_Name']) . "</option>";
+    }
     ?>
     <p>Patient group 3</p>
 </div>
@@ -84,12 +89,13 @@
 <div>
     <p>Caregiver4</p>
     <?php
-    require("db.php");
-    $db = db_connect($host,$port,$dbname,$credentials);
+
     $sql = "SELECT f_Name FROM Roster WHERE Role = 'Caregiver';";
     $ret = pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    foreach($rows as $row) {
         echo "<option value=" . strval($row['f_Name']) . "</option>";
+    }
     ?>
     <p>Patient group 4</p>
 </div>
