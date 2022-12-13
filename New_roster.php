@@ -110,5 +110,5 @@
 <?php
     require ('db.php');
     if(isset($_POST['submit'])) {
-        return
+    return;
     }
