@@ -23,8 +23,21 @@
 
         <p>New Payment</p>
         <p type = 'text' placeholder = 'New payment'></p>
-    </div>
+        <div>
 
+        <p>Name</p>
+        <p type = 'text' placeholder = 'Name'></p>
+
+        <p>Card Number</p>
+        <p type = 'text' placeholder = 'Card Number'></p>
+
+        <p>CVV</p>
+        <p type = 'text' placeholder = 'CVV'></p>
+
+        <p>Experation date</p>
+        <p type = 'text' placeholder = 'Date'></p>
+    </div>
+</div>
     <button>ok</button>
 
     <button>Cancel</button>
