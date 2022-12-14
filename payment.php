@@ -7,40 +7,53 @@
     <a href="role.php">Role</a>
     <a href="Patient_Home.php">Patient Home</a>
     <a href="Roster.php">Current Roster</a>
-    <a href="New_Roster">Make a new Roster</a>
+    <a href="New_Roster.php">Make a new Roster</a>
     <a href="payment.php">Make a Payment</a>
     <a href="employee.php">Employee</a>
 </div>
 </head>
+
+<form action = "New_Roster.php" method="POST" >  
     <h1>Payment</h1>
 
     <div class="container">
         <p>Patient ID</p>
-        <imput type = 'text' placeholder = 'Patient ID'></imput>
+        <imput name = patient_id type = 'text' placeholder = 'Patient ID'></imput>
 
         <p>Total Due</p>
-        <p>Placeholder</p>
+        <imput name = 'due' type = 'text' placeholder = 'Total Amount Due'>
 
         <p>New Payment</p>
-        <p type = 'text' placeholder = 'New payment'></p>
+        <imput name = 'pay' type = 'text' placeholder = 'Amount want to pay'>
         <div>
 
-        <p>Name</p>
-        <input type = 'text' placeholder = 'Name'></p>
 
-        <p>Card Number</p>
-        <input type = 'text' placeholder = 'Card Number'></p>
-
-        <p>CVV</p>
-        <input type = 'text' placeholder = 'CVV'></p>
-
-        <p>Experation date</p>
-        <input type = 'text' placeholder = 'Date'>
     </div>
 </div>
-    <button>ok</button>
+    <button type="submit" name='submit' value='submit'>Ok</button>
 
     <button>Cancel</button>
 
     <button>update</button>
 </html>
+
+</form>
+
+<?php
+
+if (isset($_REQUEST['submit'])) {
+
+    $x = $due - $pay;
+
+    $new_pay = $_POST[$x];
+
+    $patient_id = $_POST['patient_id'];
+
+
+        $db=db_connect($host,$port,$dbname,$credentials);
+        $sql = " INSERT into admin_con (patient_id, total_due)
+        VALUES
+        ('$patient_id','$new_pay');";
+}
+
+?>
