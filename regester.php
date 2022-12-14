@@ -47,8 +47,29 @@
 </form>
 </html>
 
+
+
+
+
 <?php
-    require('db.php');
+
+require('db.php');
+    if (isset($_POST['submit'])) {
+        $email = $_REQUEST['email'];
+        $db=db_connect($host,$port,$dbname,$credentials);
+
+        $sql="SELECT Email FROM Log_info";
+        $ret = pg_query($db,$sql);
+                $rows=pg_fetch_all($ret);
+                foreach($rows as $row){ 
+                    if ($row['email']==$email){
+                        echo 'email in use choose a different email';
+                    }
+                }
+            }
+?>
+<?php
+    // require('db.php');
     if (isset($_POST['submit'])) {
         $d=date("Y-m-d");
         $role=$_POST['role'];
@@ -60,12 +81,18 @@
         $pwd = $_REQUEST['pwd'];
         $dob = $_REQUEST['dob'];
         $db=db_connect($host,$port,$dbname,$credentials);
+        
         $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB,Approval,Add_Date)
         VALUES
-        ('$role','$first','$last','$phone','$email','$pwd','$dob','Not Approved','$d');";
+        ('$role','$first','$last','$phone','$email','$pwd','$dob','Not Approved','$d')
+        ON CONFLICT DO NOTHING;";
         $ret = pg_query($db,$sql);
         if (! $ret)
             echo pg_last_error($db);
             exit();
-    } 
+        } 
+        
 ?>
+
+
+

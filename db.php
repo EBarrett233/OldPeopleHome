@@ -82,12 +82,13 @@
 
          CREATE TABLE IF NOT EXISTS Roster
          (Role             VARCHAR(50)    ,
-         Supervisor        VARCHAR(50)    ,
-         Doctor            VARCHAR(50)    ,
-         Caregiver         VARCHAR(50)    ,
-         Group_R            VARCHAR(50)    ,
-         Date_R            DATE           ,
-         f_Name              VARCHAR  (50)
+         Supervisor_fname        VARCHAR(50)    ,
+         Doctor_fname           VARCHAR(50)    ,
+         Caregiver_group1_fname        VARCHAR(50)    ,
+         Caregiver_group2_fname        VARCHAR(50)    ,
+         Caregiver_group3_fname        VARCHAR(50)    ,
+         Caregiver_group4_fname        VARCHAR(50)    ,
+         Date_R            DATE           
          );
 
          CREATE TABLE IF NOT EXISTS Admin_home 
@@ -102,18 +103,18 @@
          NightMed       VARCHAR(50)    ,
          Breakfast      VARCHAR(50)    ,
          Lunch          VARCHAR(50)    ,
-         Dinner         VARCHAR(50)    ,
+         Dinner         VARCHAR(50)    
+      );
 
 
 
+      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
+      VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
+      ON CONFLICT DO NOTHING;
 
-         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-         VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
-         ON CONFLICT DO NOTHING;
-
-         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-         VALUES('Supervisor','Zaccc','Deaa','sup@sup.com','7173810995','sup77','2003-05-05',' Approved')
-         ON CONFLICT DO NOTHING;
+      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
+      VALUES('Supervisor','Zaccc','Deaa','sup@sup.com','7173810995','sup77','2003-05-05',' Approved')
+      ON CONFLICT DO NOTHING;
       "
 
       ;

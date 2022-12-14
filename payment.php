@@ -7,40 +7,58 @@
     <a href="role.php">Role</a>
     <a href="Patient_Home.php">Patient Home</a>
     <a href="Roster.php">Current Roster</a>
-    <a href="New_Roster">Make a new Roster</a>
+    <a href="New_Roster.php">Make a new Roster</a>
     <a href="payment.php">Make a Payment</a>
     <a href="employee.php">Employee</a>
 </div>
 </head>
+
+<form action = "payment.php" method="POST" >  
     <h1>Payment</h1>
+    
 
     <div class="container">
         <p>Patient ID</p>
-        <imput type = 'text' placeholder = 'Patient ID'></imput>
+        <input name = patient_id type = 'text' placeholder = 'Patient ID'>
 
         <p>Total Due</p>
-        <p>Placeholder</p>
+        <input name = due type = 'text' placeholder = 'Total Amount Due'>
 
         <p>New Payment</p>
-        <p type = 'text' placeholder = 'New payment'></p>
+        <input name = pay type = 'text' placeholder = 'Amount want to pay'>
         <div>
 
-        <p>Name</p>
-        <input type = 'text' placeholder = 'Name'></p>
 
-        <p>Card Number</p>
-        <input type = 'text' placeholder = 'Card Number'></p>
-
-        <p>CVV</p>
-        <input type = 'text' placeholder = 'CVV'></p>
-
-        <p>Experation date</p>
-        <input type = 'text' placeholder = 'Date'>
-    </div>
+    
 </div>
-    <button>ok</button>
+    <button type="submit" name='submit' value='submit'>Ok</button>
 
     <button>Cancel</button>
 
     <button>update</button>
+    </form>
 </html>
+
+
+
+<?php
+
+if (isset($_REQUEST['submit'])) {
+
+    $x = intval($_POST['due']) - intval($_POST['pay']);
+
+   
+
+    $patient_id = $_POST['patient_id'];
+    
+
+    require("db.php");
+        $db=db_connect($host,$port,$dbname,$credentials);
+        $sql = " INSERT into admin_con (patient_id, total_due)
+        VALUES
+        ('$patient_id','$x');";
+        $ret = pg_query($db, $sql);
+
+}
+
+?>

@@ -22,7 +22,7 @@
         $email=$_REQUEST['email'];
         $pwd=$_REQUEST['pwd'];
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql="SELECT Pwd FROM Log_info WHERE email = '$email';";
+        $sql="SELECT Pwd,role FROM Log_info WHERE email = '$email';";
         
         $ret= pg_query($db, $sql);
         if (! $ret){
@@ -36,8 +36,19 @@
             header("Location:Admin_Home.php");
             // if statement for admin login admin info is hardcodded as above untill more funtions are working
             elseif ($row['pwd']==$_POST['pwd'])
-            header("Location:Patient_Home.php");
-            // checks user info and takes to this page WILL CHANGE when home page is added
+                if ($row['role']=='doctor'){
+                    header("Location:Doctor_Appointment.php");
+                }
+                elseif($row['role']=='caregiver'){
+                    header("Location:Caregivers_Home.php");
+                }
+                elseif($row['role']=='patient'){
+                    header("Location:Patient_Home.php");
+                }
+                elseif($row['role']=='Supervisor'){
+                    header("Location:Admin_Home.php");
+                }
+                    // checks user info and takes to this page WILL CHANGE when home page is added
         }
         echo "<br>";
         echo'wrong info gabe proll messed with the code so if you ever see this message punch the hell out of GABE DOMBACH';
