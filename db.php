@@ -103,18 +103,18 @@
          NightMed       VARCHAR(50)    ,
          Breakfast      VARCHAR(50)    ,
          Lunch          VARCHAR(50)    ,
-         Dinner         VARCHAR(50)    ,
+         Dinner         VARCHAR(50)    
+      );
 
 
 
+      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
+      VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
+      ON CONFLICT DO NOTHING;
 
-         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-         VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
-         ON CONFLICT DO NOTHING;
-
-         INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-         VALUES('Supervisor','Zaccc','Deaa','sup@sup.com','7173810995','sup77','2003-05-05',' Approved')
-         ON CONFLICT DO NOTHING;
+      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
+      VALUES('Supervisor','Zaccc','Deaa','sup@sup.com','7173810995','sup77','2003-05-05',' Approved')
+      ON CONFLICT DO NOTHING;
       "
 
       ;
