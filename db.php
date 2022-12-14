@@ -91,6 +91,23 @@
          Date_R            DATE           
          );
 
+         CREATE TABLE IF NOT EXISTS Admin_home 
+         (Role          VARCHAR(50)    ,
+         AdminDate      DATE           ,
+         PatientName    VARCHAR(50)    ,
+         DocName        VARCHAR(50)    ,
+         DocAppointment VARCHAR(50)    ,
+         CareName       VARCHAR(50)    ,
+         MorningMed     VARCHAR(50)    ,
+         AfternoonMed   VARCHAR(50)    ,
+         NightMed       VARCHAR(50)    ,
+         Breakfast      VARCHAR(50)    ,
+         Lunch          VARCHAR(50)    ,
+         Dinner         VARCHAR(50)    ,
+
+
+
+
          INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
          VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
          ON CONFLICT DO NOTHING;

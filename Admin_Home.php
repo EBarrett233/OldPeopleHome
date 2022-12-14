@@ -20,7 +20,7 @@
     <button type="submit" class="adminbtn"><strong>Missed Patient Activity</strong></button>
     <label for="PatientName"><b>Patient Name:</b></label>
     <input type="text" placeholder="Name" name="PatientName">
-    <label for="DocDate"><b>Docter Name:</b></label>
+    <label for="DocName"><b>Docter Name:</b></label>
     <input type="text" placeholder="Name" name="DocName">
     <label for="DocAppointment"><b>Docter Appointment:</b></label>
     <input type="text" placeholder="Appointment" name="DocAppointment">
@@ -30,17 +30,17 @@
     </div>
     <div class="container">
     <label for="MorningMed"><b>Morning Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="MorningMed">
+    <input type="text" placeholder="Med" name="MorningMed">
     <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="AfternoonMed">
+    <input type="text" placeholder="Med" name="AfternoonMed">
     <label for="NightMed"><b>Night Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="NightMed">
+    <input type="text" placeholder="Med" name="NightMed">
     <label for="Breakfast"><b>Breakfast:</b></label>
-    <input type="checkbox" placeholder="food" name="Breakfast">
+    <input type="text" placeholder="food" name="Breakfast">
     <label for="Lunch"><b>Lunch:</b></label>
-    <input type="checkbox" placeholder="food" name="Lunch">
+    <input type="text" placeholder="food" name="Lunch">
     <label for="Dinner"><b>Dinner:</b></label>
-    <input type="checkbox" placeholder="food" name="Dinner">
+    <input type="text" placeholder="food" name="Dinner">
     </div>
 
     <h1>New Employee Info</h1>
@@ -51,6 +51,33 @@
     <input type="text" placeholder="Salary" name="Salary">
     <button type="submit" class="adminbtn"><strong>add info</strong></button>
 </div>
-    <?php
+    
+<?php
+$db=db_connect($host,$port,$dbname,$credentials);
+    $AdminDate=$_POST['AdminDate'];
+    $name=$_POST['PatientName'];
+    $DocName=$_POST['DocName'];
+    $DocAppointment=$_POST['DocAppointment'];
+    $CareName=$_POST['CareName'];
+    $morning=$_POST['MorningMed'];
+    $afternoon=$_POST['AfternoonMed'];
+    $nights=$_POST['NightMed'];
+    $breakast=$_POST['Breakfast'];
+    $lunch=$_POST['Lunch'];
+    $dinner=$_POST['Dinner'];
+    
+    $rows=pg_fetch_all($ret);
+    $Current_Date=date("Y-m-d");
+    foreach($rows as $row){
+        $R=$row['role'];
+        if ($_POST['role'] ==$R){
+            echo'test_post';
+            
+            $sql="INSERT INTO Admin_home (Role,AdminDate,PatientName,DocName,DocAppointment,CareName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
+            VALUES  ('$R','$AdminDate','$name','$DocName','$DocAppointment','$CareName','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
+            $ret= pg_query($db, $sql);
+
+        }
+    }
 
 ?>

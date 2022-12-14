@@ -47,6 +47,7 @@
 </div>
     <button type="submit" class="continue"><strong>OK</strong></button>
     <button type="submit" class="cancle"><strong>Cancle</strong></button>
+
     <?php
 require('db.php');
 $admin_user='admin@admin.com';
