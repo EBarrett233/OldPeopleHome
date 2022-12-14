@@ -24,21 +24,19 @@
     $rows = pg_fetch_all($ret);
         // print_r($rows[0]['email']);
         foreach ($rows as $row) {
-        
-            echo 'Patients ID:'.$row ['Patients_ID'].'<br>';
-            echo 'Date:'.$row ['Date_P'].'<br>';
-            echo 'Patient Name:'.$row ['Patients_Name'].'<br>';
-            echo 'Doctor Name:'.$row ['Doc_Name'].'<br>';
-            echo 'Doctor Apoitment:'.$row ['Doc_App'].'<br>';
-            echo 'Caregiver name:'.$row ['Care_Name'].'<br>';
-            echo 'Morning Medicine:'.$row ['Mor_Med'].'<br>';
-            echo 'Afternoon Medicine:'.$row ['Aft_Med'].'<br>';
-            echo 'Night Medicine:'.$row ['Night_Med'].'<br>';
-            echo 'Breakast:'.$row ['Breakast'].'<br>';
-            echo 'Lunch:'.$row ['Lunch'].'<br>';
-            echo 'Dinner:'.$row ['Dinner'].'<br>';
-            echo 'Admition Date:'.$row ['Adm_Date'].'<br>';
-            echo 'Date Of Birth:'.$row ['DOB'].'<br>';
+            echo 'Patients ID:'.$row ['patients_id'].'<br>';
+            echo 'Date:'.$row ['date_p'].'<br>';
+            echo 'Patient Name:'.$row ['patients_name'].'<br>';
+            echo 'Doctor Name:'.$row ['doc_name'].'<br>';
+            echo 'Doctor Apoitment:'.$row ['doc_app'].'<br>';
+            echo 'Caregiver name:'.$row ['care_name'].'<br>';
+            echo 'Morning Medicine:'.$row ['mor_med'].'<br>';
+            echo 'Afternoon Medicine:'.$row ['aft_med'].'<br>';
+            echo 'Night Medicine:'.$row ['night_med'].'<br>';
+            echo 'Breakast:'.$row ['breakast'].'<br>';
+            echo 'Lunch:'.$row ['lunch'].'<br>';
+            echo 'Dinner:'.$row ['dinner'].'<br>';
+            echo 'Admition Date:'.$row ['adm_date'].'<br>';
         }
 ?>
 
