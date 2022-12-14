@@ -84,7 +84,8 @@ require('db.php');
         
         $sql = " INSERT into Log_info (Role,F_Name,L_Name,phone,Email,Pwd,DOB,Approval,Add_Date)
         VALUES
-        ('$role','$first','$last','$phone','$email','$pwd','$dob','Not Approved','$d');";
+        ('$role','$first','$last','$phone','$email','$pwd','$dob','Not Approved','$d')
+        ON CONFLICT DO NOTHING;";
         $ret = pg_query($db,$sql);
         if (! $ret)
             echo pg_last_error($db);

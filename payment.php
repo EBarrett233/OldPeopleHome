@@ -13,47 +13,52 @@
 </div>
 </head>
 
-<form action = "New_Roster.php" method="POST" >  
+<form action = "payment.php" method="POST" >  
     <h1>Payment</h1>
+    
 
     <div class="container">
         <p>Patient ID</p>
-        <imput name = patient_id type = 'text' placeholder = 'Patient ID'></imput>
+        <input name = patient_id type = 'text' placeholder = 'Patient ID'>
 
         <p>Total Due</p>
-        <imput name = 'due' type = 'text' placeholder = 'Total Amount Due'>
+        <input name = due type = 'text' placeholder = 'Total Amount Due'>
 
         <p>New Payment</p>
-        <imput name = 'pay' type = 'text' placeholder = 'Amount want to pay'>
+        <input name = pay type = 'text' placeholder = 'Amount want to pay'>
         <div>
 
 
-    </div>
+    
 </div>
     <button type="submit" name='submit' value='submit'>Ok</button>
 
     <button>Cancel</button>
 
     <button>update</button>
+    </form>
 </html>
 
-</form>
+
 
 <?php
 
 if (isset($_REQUEST['submit'])) {
 
-    $x = $due - $pay;
+    $x = intval($_POST['due']) - intval($_POST['pay']);
 
-    $new_pay = $_POST[$x];
+   
 
     $patient_id = $_POST['patient_id'];
+    
 
-
+    require("db.php");
         $db=db_connect($host,$port,$dbname,$credentials);
         $sql = " INSERT into admin_con (patient_id, total_due)
         VALUES
-        ('$patient_id','$new_pay');";
+        ('$patient_id','$x');";
+        $ret = pg_query($db, $sql);
+
 }
 
 ?>
