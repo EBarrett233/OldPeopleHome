@@ -13,34 +13,34 @@
 </div>
 </head>
 <form>
-    <h1>Doctor Appointment</h1>
+    <h1>Patient Home</h1>
     <div class="container">
-    <label for="PatientID"><b>Patient ID:</b></label>
-    <input type="text" placeholder="ID" name="PatientID">
-    <label for="AppointDate"><b>Date</b></label>
-    <input type="date" placeholder="Date" name="AppointDate">
-    <label for="PatientName"><b>Patient Name:</b></label>
-    <input type="text" placeholder="Name" name="PatientName">    
-    <label for="DocDate"><b>Docter Name:</b></label>
-    <input type="text" placeholder="Name" name="DocName">
-    <label for="DocAppointment"><b>Docter Appointment:</b></label>
-    <input type="text" placeholder="Appointment" name="DocAppointment">
-    <label for="CareName"><b>Caregiver Name:</b></label>
-    <input type="text" placeholder="Name" name="CareName">
-    </div>
-    <div class="container">
-    <label for="MorningMed"><b>Morning Medicine:</b></label>
-    <input type="text" placeholder="Med" name="MorningMed">
-    <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
-    <input type="text" placeholder="Med" name="AfternoonMed">
-    <label for="NightMed"><b>Night Medicine:</b></label>
-    <input type="text" placeholder="Med" name="NightMed">
-    <label for="Breakfast"><b>Breakfast:</b></label>
-    <input type="text" placeholder="food" name="Breakfast">
-    <label for="Lunch"><b>Lunch:</b></label>
-    <input type="text" placeholder="food" name="Lunch">
-    <label for="Dinner"><b>Dinner:</b></label>
-    <input type="text" placeholder="food" name="Dinner">
+<?php
+    require('db.php');
+    $db=db_connect($host,$port,$dbname,$credentials);
+    $sql="SELECT * FROM Patients_Home";
+   
+    $ret= pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        // print_r($rows[0]['email']);
+        foreach ($rows as $row) {
+        
+            echo 'Patients ID:'.$row ['Patients_ID'].'<br>';
+            echo 'Date:'.$row ['Date_P'].'<br>';
+            echo 'Patient Name:'.$row ['Patients_Name'].'<br>';
+            echo 'Doctor Name:'.$row ['Doc_Name'].'<br>';
+            echo 'Doctor Apoitment:'.$row ['Doc_App'].'<br>';
+            echo 'Caregiver name:'.$row ['Care_Name'].'<br>';
+            echo 'Morning Medicine:'.$row ['Mor_Med'].'<br>';
+            echo 'Afternoon Medicine:'.$row ['Aft_Med'].'<br>';
+            echo 'Night Medicine:'.$row ['Night_Med'].'<br>';
+            echo 'Breakast:'.$row ['Breakast'].'<br>';
+            echo 'Lunch:'.$row ['Lunch'].'<br>';
+            echo 'Dinner:'.$row ['Dinner'].'<br>';
+            echo 'Admition Date:'.$row ['Adm_Date'].'<br>';
+            echo 'Date Of Birth:'.$row ['DOB'].'<br>';
+        }
+?>
 
-    
     </div>
+</form>
