@@ -26,16 +26,16 @@
         <div>
 
         <p>Name</p>
-        <p type = 'text' placeholder = 'Name'></p>
+        <input type = 'text' placeholder = 'Name'></p>
 
         <p>Card Number</p>
-        <p type = 'text' placeholder = 'Card Number'></p>
+        <input type = 'text' placeholder = 'Card Number'></p>
 
         <p>CVV</p>
-        <p type = 'text' placeholder = 'CVV'></p>
+        <input type = 'text' placeholder = 'CVV'></p>
 
         <p>Experation date</p>
-        <p type = 'text' placeholder = 'Date'></p>
+        <input type = 'text' placeholder = 'Date'>
     </div>
 </div>
     <button>ok</button>

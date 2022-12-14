@@ -49,13 +49,8 @@
     <input type="text" placeholder="ID" name="EmpID">
     <label for="Salary"><b>Salary:</b></label>
     <input type="text" placeholder="Salary" name="Salary">
+    <button type="submit" class="adminbtn"><strong>add info</strong></button>
 </div>
     <?php
-
-
-
-
-
-
 
 ?>
