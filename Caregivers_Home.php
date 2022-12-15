@@ -62,6 +62,7 @@
     ?>
 
 <?php
+
 if (isset($_POST['submit'])) {
     
         $name=$_REQUEST['PatientName'];
@@ -80,6 +81,7 @@ if (isset($_POST['submit'])) {
     VALUES  
     ('$name','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
     $ret= pg_query($db, $sql);
+
     }
 
 ?>
