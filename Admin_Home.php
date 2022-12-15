@@ -33,18 +33,21 @@
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
     $num=0;
-    $sql="SELECT * FROM Patients_Home WHERE mor_med ='no' OR aft_med ='no' OR night_med ='no' OR breakast='no' OR lunch='no' OR dinner='no' ";
+    $sql="SELECT * FROM Admin_home WHERE morningmed ='no' OR afternoonmed ='no' OR nightmed ='no' OR breakfast='no' OR lunch='no' OR dinner='no' ";
     $ret= pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    
         // print_r($rows[0]['email']);
         
         foreach ($rows as $row) {
             $num+=1;
             echo '<br>'.'Patient  '.$num.') ';
-            echo $row ['role'].'<br>';
-            echo ' Patients Name: '.$row ['f_name'].'<br>';
+            // echo $row ['*'].'<br>';
+            // echo ' Patients Name: '.$row ['f_name'].'<br>';
             
         }
+
+
         $db=db_connect($host,$port,$dbname,$credentials);
         $sql="SELECT Patients_Name,Mor_Med,Aft_Med,Night_Med,Breakast,Lunch,Dinner FROM Patients_Home WHERE Role ='patient'";
         $ret= pg_query($db, $sql);
@@ -77,35 +80,7 @@
 </div>
 </form>    
 <?php
-require("db.php");
-if (isset($_POST['submit'])) {
-    
-        // $AdminDate=$_POST['AdminDate'];
-        $name=$_REQUEST['PatientName'];
-        $DocName=$_REQUEST['DocName'];
-        $DocAppointment=$_REQUEST['DocAppointment'];
-        $CareName=$_REQUEST['CareName'];
-        $morning=$_REQUEST['MorningMed'];
-        $afternoon=$_REQUEST['AfternoonMed'];
-        $nights=$_REQUEST['NightMed'];
-        $breakast=$_REQUEST['Breakfast'];
-        $lunch=$_REQUEST['Lunch'];
-        $dinner=$_REQUEST['Dinner'];
-        
-        // $rows=pg_fetch_all($ret);
-        $Current_Date=date("Y-m-d");
-        // foreach($rows as $row){
-        //     $R=$row['role'];
-        //     if ($_POST['role'] ==$R){
-        //         echo'test_post';
-        $db=db_connect($host,$port,$dbname,$credentials);
-    $sql="INSERT INTO Admin_home (PatientName,DocName,DocAppointment,CareName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
-    VALUES  
-    ('$name','$DocName','$DocAppointment','$CareName','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
-    $ret= pg_query($db, $sql);
 
-            // }
-        // }
- }
-//  '$AdminDate'
+
+
 ?>
