@@ -29,9 +29,17 @@
     <label for="PatientName"><b>Patient Name:</b></label>
     <input type="text" placeholder="Name" name="PatientName">
     </div>
+
+    <div class="container">
+    <label for="Comment"><b>Patient ID:</b></label>
+    <input type="text" placeholder="ID" name="Comment">
+    </div>
+    <button type="submit" class="continue"><strong>OK</strong></button>
+    <button type="submit" class="cancle"><strong>Cancle</strong></button>
     <button name="submit"type="submit" class="continue"><strong>OK</strong></button>
     <!-- <button type="submit" class="cancle"><strong>Cancle</strong></button> -->
     </form>
+
 <?php
 // require('db.php');
 // $admin_user='admin@admin.com';
