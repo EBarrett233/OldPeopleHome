@@ -67,7 +67,7 @@ if (isset($_REQUEST['submit'])) {
 
     // require("db.php");
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql = " INSERT into emp_info (Salary)
+        $sql = " UPDATE into emp_info (Salary)
         VALUES
         ('$salary');";
         $ret = pg_query($db, $sql);
