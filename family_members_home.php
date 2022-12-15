@@ -18,6 +18,8 @@
     
     <label for="AppointDate"><b>Date</b></label>
     <?php
+    require("db.php");
+    $db=db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT Date_P FROM patients_home where family_code = 'patients_name';";
 
     $ret = pg_query($db, $sql);
