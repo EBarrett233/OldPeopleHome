@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="Admin_Home.css" />
-<head>
+<!-- <head>
     <div class="title">
     <a href="Additional_Info_for_Patient.php">Patient Info</a>
     <a href="Doctor_Appointment.php">Doctor Appointment</a>
@@ -11,7 +11,7 @@
     <a href="payment.php">Make a Payment</a>
     <a href="employee.php">Employee</a>
 </div>
-</head>
+</head> -->
 <form>
     <h1>Caregiver home</h1>
     <div class="container">
