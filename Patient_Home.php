@@ -16,12 +16,12 @@
     <h1>Patient Home</h1>
     <div class="container">
 <?php
-session_start();
+// session_start();
 
 
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
-    $sql="SELECT * FROM Patients_Home WHERE patients_id =".$_SESSION["id"] ;
+    $sql="SELECT * FROM Patients_Home ";
    
     $ret= pg_query($db, $sql);
     $rows = pg_fetch_all($ret);

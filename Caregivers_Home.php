@@ -11,8 +11,8 @@
     <a href="payment.php">Make a Payment</a>
     <a href="employee.php">Employee</a>
 </div>
-</head> -->
-<form>
+</head>
+<form class="form" method="POST" name="Register" action="#">
     <h1>Caregiver home</h1>
     <div class="container">
 
@@ -36,9 +36,9 @@
     <label for="Dinner"><b>Dinner:</b></label>
     <input type="text" placeholder="food" name="Dinner">
     </div>
-    <button type="submit" class="continue"><strong>OK</strong></button>
+    <button name = "submit"type="submit" class="continue"><strong>OK</strong></button>
     <button type="submit" class="cancle"><strong>Cancle</strong></button>
-
+</form>
     <?php
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
@@ -62,27 +62,26 @@
     ?>
 
 <?php
-$db=db_connect($host,$port,$dbname,$credentials);
-    $name=$_POST['PatientName'];
-    $morning=$_POST['MorningMed'];
-    $afternoon=$_POST['AfternoonMed'];
-    $nights=$_POST['NightMed'];
-    $breakast=$_POST['Breakfast'];
-    $lunch=$_POST['Lunch'];
-    $dinner=$_POST['Dinner'];
-    
-    $rows=pg_fetch_all($ret);
-    $Current_Date=date("Y-m-d");
-    foreach($rows as $row){
-        $R=$row['role'];
-        if ($_POST['role'] ==$R){
-            echo'test_post';
-            
-            $sql="INSERT INTO Admin_home (Role,PatientName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
-            VALUES  ('$R','$name','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
-            $ret= pg_query($db, $sql);
 
-        }
+if (isset($_POST['submit'])) {
+    
+        $name=$_REQUEST['PatientName'];
+        // $DocName=$_REQUEST['DocName'];
+        // $DocAppointment=$_REQUEST['DocAppointment'];
+        // $CareName=$_REQUEST['CareName'];
+        $morning=$_REQUEST['MorningMed'];
+        $afternoon=$_REQUEST['AfternoonMed'];
+        $nights=$_REQUEST['NightMed'];
+        $breakast=$_REQUEST['Breakfast'];
+        $lunch=$_REQUEST['Lunch'];
+        $dinner=$_REQUEST['Dinner'];
+        $Current_Date=date("Y-m-d");
+        $db=db_connect($host,$port,$dbname,$credentials);
+    $sql="INSERT INTO Admin_home (PatientName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
+    VALUES  
+    ('$name','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
+    $ret= pg_query($db, $sql);
+
     }
 
 ?>

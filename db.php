@@ -69,13 +69,14 @@
          Adm_Date          DATE           ,
          DOB               DATE           ,
          Comment           VARCHAR(500)   ,
-         ADMITTED          VARCHAR(50)    
+         ADMITTED          VARCHAR(50)    ,
+         fam_code          VARCHAR(50)    
          );
 
          CREATE TABLE IF NOT EXISTS Emp_INFO
          (Role             VARCHAR(50)    ,
          Emp_ID1                INT            ,
-         Name              VARCHAR(50)    ,
+         Name_1              VARCHAR(50)    ,
          Salary            FlOAT          ,
          Emp_ID            INT            ,
          New_Salary        FLOAT          
@@ -109,22 +110,16 @@
 
 
 
-      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-      VALUES('Admin','Dane','Shaut','admin@admin.com','7173810995','admin77','2003-05-05',' Approved')
-      ON CONFLICT DO NOTHING;
-
-      INSERT INTO Log_info(Role,F_Name,L_Name,Email,Phone,Pwd,DOB,Approval)
-      VALUES('Supervisor','Zaccc','Deaa','sup@sup.com','7173810995','sup77','2003-05-05',' Approved')
-      ON CONFLICT DO NOTHING;
+      
       "
 
       ;
-      $ret = pg_query($db, $sql);
-      if(!$ret) {
-         echo pg_last_error($db);
-      } else {
-         // echo "Table created successfully\n";
-      }
+      // $ret = pg_query($db, $sql);
+      // if(!$ret) {
+      //    echo pg_last_error($db);
+      // } else {
+      //    echo "Table created successfully\n";
+      // }
       }
    // write $test function and use include or required on seprate files to keep the db functions on this page to transfer to other pages when the time comes
       pg_close($db);

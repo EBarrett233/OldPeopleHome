@@ -12,12 +12,12 @@
     <a href="employee.php">Employee</a>
 </div>
 </head>
-<form>
+<form class="form" method="POST" name="Register" action="#">
     <h1>Admin Page</h1>
     <div class="container">
     <label for="AdminDate"><b>Date:</b></label>
     <input type="date" placeholder="Date" name="AdminDate">
-    <button type="submit" class="adminbtn"><strong>Missed Patient Activity</strong></button>
+    <!-- <button type="submit" class="adminbtn"><strong>Missed Patient Activity</strong></button> -->
     <label for="PatientName"><b>Patient Name:</b></label>
     <input type="text" placeholder="Name" name="PatientName">
     <label for="DocName"><b>Docter Name:</b></label>
@@ -33,18 +33,21 @@
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
     $num=0;
-    $sql="SELECT Role,F_Name,L_Name FROM Patients_Home WHERE mor_med ='no' OR aft_med ='no' OR night_med ='no' OR breakast='no' OR lunch='no' OR dinner='no' ";
+    $sql="SELECT * FROM Admin_home WHERE morningmed ='no' OR afternoonmed ='no' OR nightmed ='no' OR breakfast='no' OR lunch='no' OR dinner='no' ";
     $ret= pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
+    
         // print_r($rows[0]['email']);
         
         foreach ($rows as $row) {
             $num+=1;
             echo '<br>'.'Patient  '.$num.') ';
-            echo $row ['role'].'<br>';
-            echo ' Patients Name: '.$row ['f_name'].'<br>';
+            // echo $row ['*'].'<br>';
+            // echo ' Patients Name: '.$row ['f_name'].'<br>';
             
         }
+
+
         $db=db_connect($host,$port,$dbname,$credentials);
         $sql="SELECT Patients_Name,Mor_Med,Aft_Med,Night_Med,Breakast,Lunch,Dinner FROM Patients_Home WHERE Role ='patient'";
         $ret= pg_query($db, $sql);
@@ -73,35 +76,11 @@
     <input type="text" placeholder="ID" name="EmpID">
     <label for="Salary"><b>Salary:</b></label>
     <input type="text" placeholder="Salary" name="Salary">
-    <button type="submit" class="adminbtn"><strong>add info</strong></button>
+    <button name ="submit" type="submit" class="adminbtn"><strong>add info</strong></button>
 </div>
-    
+</form>    
 <?php
-$db=db_connect($host,$port,$dbname,$credentials);
-    $AdminDate=$_POST['AdminDate'];
-    $name=$_POST['PatientName'];
-    $DocName=$_POST['DocName'];
-    $DocAppointment=$_POST['DocAppointment'];
-    $CareName=$_POST['CareName'];
-    $morning=$_POST['MorningMed'];
-    $afternoon=$_POST['AfternoonMed'];
-    $nights=$_POST['NightMed'];
-    $breakast=$_POST['Breakfast'];
-    $lunch=$_POST['Lunch'];
-    $dinner=$_POST['Dinner'];
-    
-    $rows=pg_fetch_all($ret);
-    $Current_Date=date("Y-m-d");
-    foreach($rows as $row){
-        $R=$row['role'];
-        if ($_POST['role'] ==$R){
-            echo'test_post';
-            
-            $sql="INSERT INTO Admin_home (Role,AdminDate,PatientName,DocName,DocAppointment,CareName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
-            VALUES  ('$R','$AdminDate','$name','$DocName','$DocAppointment','$CareName','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
-            $ret= pg_query($db, $sql);
 
-        }
-    }
+
 
 ?>
