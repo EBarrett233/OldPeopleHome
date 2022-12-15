@@ -88,12 +88,14 @@
 </div>
 </form>    
 <?php
+
 if (isset($_POST['submit'])) {
     $EmpID=$_POST['EmpID'];
     $Salary=$_POST['Salary'];
+    $db=db_connect($host,$port,$dbname,$credentials);
 
-    $sql="INSERT INTO Admin_home (EmpID,Salary) 
-            VALUES  ('$EmpID','$Salary);";
+    $sql="INSERT INTO emp_info (Emp_ID1,Salary) 
+    VALUES  ('$EmpID','$Salary');";
             $ret= pg_query($db, $sql);
 }
 ?>
