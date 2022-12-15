@@ -44,6 +44,12 @@
             echo '<br>'.'Patient  '.$num.') ';
             echo $row ['patientname'].'<br>';
             echo 'morning meds ='.$row ['morningmed'].'<br>';
+            echo 'afternoon meds ='.$row ['afternoonmed'].'<br>';
+            echo 'night meds ='.$row ['nightmed'].'<br>';
+            echo 'breakfast ='.$row ['breakfast'].'<br>';
+            echo 'lunch ='.$row ['lunch'].'<br>';
+            echo 'dinner ='.$row ['dinner'].'<br>';
+
             // echo ' Patients Name: '.$row ['f_name'].'<br>';
             
         }
