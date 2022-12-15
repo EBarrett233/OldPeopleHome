@@ -15,27 +15,25 @@
 <form class="form" method="POST" name="Register" action="#">
     <h1>Doctor Appointment</h1>
     <div class="container">
-    <label for="PatientID"><b>Patient ID:</b></label>
-    <input type="text" placeholder="ID" name="PatientID">
-    <label for="AppointDate"><b>Date</b></label>
-    <input type="date" placeholder="Date" name="AppointDate">
+    <label for="Patient_ID"><b>Patient ID:</b></label>
+    <input type="text" placeholder="ID" name="Patient_ID">
+    <label for="Date_App"><b>Date</b></label>
+    <input type="date" placeholder="Date" name="Date_App">
     <label for="role"><b>Doctor:</b></label>
-    <select name="Doc" id="Doc">
+    <select name="Doctor" id="Doc">
     <option value="Doctor1">Doctor1</option>
     <option value="Doctor2">Doctor2</option>
     <option value="Doctor3">Doctor3</option>
     <option value="Doctor4">Doctor4</option>
     </select>
-    <label for="PatientName"><b>Patient Name:</b></label>
-    <input type="text" placeholder="Name" name="PatientName">
+    <label for="Pat_Name"><b>Patient Name:</b></label>
+    <input type="text" placeholder="Name" name="Pat_Name">
     </div>
 
     <div class="container">
     <label for="Comment"><b>Comment:</b></label>
     <input type="text" placeholder="ID" name="Comment">
     </div>
-    <button type="submit" class="continue"><strong>OK</strong></button>
-    <button type="submit" class="cancle"><strong>Cancle</strong></button>
     <button name="submit"type="submit" class="continue"><strong>OK</strong></button>
     <!-- <button type="submit" class="cancle"><strong>Cancle</strong></button> -->
     </form>
@@ -79,20 +77,20 @@
 
 <?php
 require('db.php');
-if (isset($_POST['submit'])) {
-    $patientid=$_POST['Patient_ID'];
-    $dateapp=$_POST['Date_App'];
-    $doctor=$_POST['Doctor'];
-    $name=$_POST['Pat_Name'];
-    $comment=$_POST['Comment'];
+if (isset($_REQUEST['submit'])) {
+    $patientid=$_REQUEST['Patient_ID'];
+    $dateapp=$_REQUEST['Date_App'];
+    $doctor=$_REQUEST['Doctor'];
+    $name=$_REQUEST['Pat_Name'];
+    $comment=$_REQUEST['Comment'];
     // $morning=$_POST['MorningMed'];
     // $afternoon=$_POST['AfternoonMed'];
     // $nights=$_POST['NightMed'];
     $db=db_connect($host,$port,$dbname,$credentials);
-    $rows=pg_fetch_all($ret);
+    
     $Current_Date=date("Y-m-d");       
-            $sql="INSERT INTO Doctors_App (Role,Patient_ID,Date_App,Pat_Name,Comment) 
-            VALUES  ('$R','$patientid','$dateapp','$doctor','$name','$comment');";
+            $sql="INSERT INTO Doctors_App (Patient_ID,Date_App,doctor,Pat_Name,Comment) 
+            VALUES  ('$patientid','$dateapp','$doctor','$name','$comment');";
             $ret= pg_query($db, $sql);
 
 
