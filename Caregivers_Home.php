@@ -38,3 +38,25 @@
     </div>
     <button type="submit" class="continue"><strong>OK</strong></button>
     <button type="submit" class="cancle"><strong>Cancle</strong></button>
+
+    <?php
+    require('db.php');
+    $db=db_connect($host,$port,$dbname,$credentials);
+    $num=0;
+    $sql="SELECT Role,F_Name,L_Name FROM Log_info WHERE Role ='patient'";
+    $ret= pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        // print_r($rows[0]['email']);
+        
+        foreach ($rows as $row) {
+            $num+=1;
+            echo '<br>'.'Patient  '.$num.') ';
+            echo $row ['role'].'<br>';
+            echo ' Patients Name: '.$row ['f_name'].'<br>';
+            
+        }
+        $db=db_connect($host,$port,$dbname,$credentials);
+        $sql="SELECT Patients_Name,Mor_Med,Aft_Med,Night_Med,Breakast,Lunch,Dinner FROM Patients_Home WHERE Role ='patient'";
+        $ret= pg_query($db, $sql);
+        $rows = pg_fetch_all($ret);
+    ?>

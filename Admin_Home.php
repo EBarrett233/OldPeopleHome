@@ -33,7 +33,7 @@
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
     $num=0;
-    $sql="SELECT Role,F_Name,L_Name FROM Log_info WHERE Role ='patient'";
+    $sql="SELECT Role,F_Name,L_Name FROM Log_info WHERE Mor_Med ='no' OR Aft_Med ='no' OR Night_Med ='no' OR Night_Med='Breakast' OR Night_Med='Lunch' OR Night_Med='Dinner' ";
     $ret= pg_query($db, $sql);
     $rows = pg_fetch_all($ret);
         // print_r($rows[0]['email']);
