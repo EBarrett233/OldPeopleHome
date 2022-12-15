@@ -69,7 +69,8 @@
          Adm_Date          DATE           ,
          DOB               DATE           ,
          Comment           VARCHAR(500)   ,
-         ADMITTED          VARCHAR(50)    
+         ADMITTED          VARCHAR(50)    ,
+         fam_code          VARCHAR(50)    
          );
 
          CREATE TABLE IF NOT EXISTS Emp_INFO

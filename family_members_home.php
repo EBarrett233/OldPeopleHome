@@ -17,78 +17,118 @@
     <div class="container">
     
     <label for="AppointDate"><b>Date</b></label>
-    <input type="date" placeholder="Date" name="AppointDate">
+    <?php
+    $sql = "SELECT Date_P FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['date_p'];
+
+    ?>
+
     <label for="DocDate"><b>Docter Name:</b></label>
-    <input type="text" placeholder="Name" name="DocName">
+
+    <?php
+    $sql = "SELECT doc_name FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['doc_name'];
+    ?>
+
     <label for="CareName"><b>Caregiver Name:</b></label>
-    <input type="text" placeholder="Name" name="CareName"> 
+    
+    <?php
+    $sql = "SELECT Care_Name FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['Care_Name'];
+    ?>
+
     </div>
     <div class="container">
-    <label for="MorningMed"><b>Morning Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="MorningMed">
+    <label for="Mor_Med"><b>Morning Medicine:</b></label>
+   
+    <?php
+    $sql = "SELECT Mor_Med FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['mor_med'];
+    ?>
+
     <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="AfternoonMed">
+
+    <?php
+    $sql = "SELECT Aft_Med FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['aft_med'];
+    ?>
+
     <label for="NightMed"><b>Night Medicine:</b></label>
-    <input type="checkbox" placeholder="Med" name="NightMed">
+    
+    <?php
+    $sql = "SELECT Night_Med FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['night_med'];
+    ?>
+
     <label for="Breakfast"><b>Breakfast:</b></label>
-    <input type="checkbox" placeholder="food" name="Breakfast">
+
+    <?php
+    $sql = "SELECT Breakast FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['breakast'];
+    ?>
+
     <label for="Lunch"><b>Lunch:</b></label>
-    <input type="checkbox" placeholder="food" name="Lunch">
+
+    <?php
+    $sql = "SELECT Lunch FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['lunch'];
+    ?>
+
     <label for="Dinner"><b>Dinner:</b></label>
-    <input type="checkbox" placeholder="food" name="Dinner">
+
+    <?php
+    $sql = "SELECT Dinner FROM patients_home where family_code = 'patients_name';";
+
+    $ret = pg_query($db, $sql);
+    $row = pg_fetch_all($ret);
+        echo $row[0]['dinner'];
+    ?>
 
     </div>
     <div class="container">
     <label for="family code"><b>Family Code(For Patient Family Member):</b></label>
-    <input type="text" placeholder="Family Code" name="family code">
-    <label for="PatientID"><b>Patient ID(For Patient Family Member):</b></label>
-    <input type="text" placeholder="ID" name="PatientID">
+    <input type="text" placeholder="Family Code" name="family_code">
+    
 
 </div>
-    <button type="submit" class="continue"><strong>OK</strong></button>
+    <button name="submit" type="submit" class="continue"><strong>OK</strong></button>
     <button type="submit" class="cancle"><strong>Cancle</strong></button>
 
     <?php
-require('db.php');
-$admin_user='admin@admin.com';
-$admin_pass='admin77';
-    $db=db_connect($host,$port,$dbname,$credentials);
-    $sql="SELECT * FROM Doctors_App;";
-    $ret= pg_query($db, $sql);
 
+    if (isset($_REQUEST['submit'])) {
+        $fam_code = $_POST['family_code'];
 
-    $rows = pg_fetch_all($ret);
-    foreach ($rows as $row) {
-        echo '<br>'.'Patient ID';
-        echo $row ['Patient_ID'].'<br>';
-        echo 'Patient ID: '.$row ['role'].'<br>';
+        require("db.php");
+        $db = db_connect($host, $port, $dbname, $credentials);
+        $sql = "UPDATE (fam_code)
+        SET
+        ('$fam_code');";
+        $ret = pg_query($db, $sql);
 
-        echo '<br>'.'Appointment Date';
-        echo $row ['Date_App'].'<br>';
-        echo 'Appointment Date: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Doctor';
-        echo $row ['Doctor'].'<br>';
-        echo 'Doctor: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Patient Name';
-        echo $row ['Pat_Name'].'<br>';
-        echo 'Patient Name: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Comments';
-        echo $row ['Comment'].'<br>';
-        echo 'Comment: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Morning Meds';
-        echo $row ['Morning_Meds'].'<br>';
-        echo 'Morning Meds: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Afternoon Meds';
-        echo $row ['Afternoon_Meds'].'<br>';
-        echo 'Afternoon Meds: '.$row ['role'].'<br>';
-
-        echo '<br>'.'Night Meds';
-        echo $row ['Night_Meds'].'<br>';
-        echo 'Night Meds: '.$row ['role'].'<br>';
     }
 ?>
