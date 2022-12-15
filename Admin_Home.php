@@ -49,6 +49,7 @@
             echo 'breakfast ='.$row ['breakfast'].'<br>';
             echo 'lunch ='.$row ['lunch'].'<br>';
             echo 'dinner ='.$row ['dinner'].'<br>';
+            
 
             // echo ' Patients Name: '.$row ['f_name'].'<br>';
             
@@ -87,7 +88,12 @@
 </div>
 </form>    
 <?php
+if (isset($_POST['submit'])) {
+    $EmpID=$_POST['EmpID'];
+    $Salary=$_POST['Salary'];
 
-
-
+    $sql="INSERT INTO Admin_home (EmpID,Salary) 
+            VALUES  ('$EmpID','$Salary);";
+            $ret= pg_query($db, $sql);
+}
 ?>
