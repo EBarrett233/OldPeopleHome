@@ -12,12 +12,12 @@
     <a href="employee.php">Employee</a>
 </div>
 </head>
-<form>
+<form class="form" method="POST" name="Register" action="#">
     <h1>Admin Page</h1>
     <div class="container">
     <label for="AdminDate"><b>Date:</b></label>
     <input type="date" placeholder="Date" name="AdminDate">
-    <button type="submit" class="adminbtn"><strong>Missed Patient Activity</strong></button>
+    <!-- <button type="submit" class="adminbtn"><strong>Missed Patient Activity</strong></button> -->
     <label for="PatientName"><b>Patient Name:</b></label>
     <input type="text" placeholder="Name" name="PatientName">
     <label for="DocName"><b>Docter Name:</b></label>
@@ -49,35 +49,39 @@
     <input type="text" placeholder="ID" name="EmpID">
     <label for="Salary"><b>Salary:</b></label>
     <input type="text" placeholder="Salary" name="Salary">
-    <button type="submit" class="adminbtn"><strong>add info</strong></button>
+    <button name ="submit" type="submit" class="adminbtn"><strong>add info</strong></button>
 </div>
-    
+</form>    
 <?php
-$db=db_connect($host,$port,$dbname,$credentials);
-    $AdminDate=$_POST['AdminDate'];
-    $name=$_POST['PatientName'];
-    $DocName=$_POST['DocName'];
-    $DocAppointment=$_POST['DocAppointment'];
-    $CareName=$_POST['CareName'];
-    $morning=$_POST['MorningMed'];
-    $afternoon=$_POST['AfternoonMed'];
-    $nights=$_POST['NightMed'];
-    $breakast=$_POST['Breakfast'];
-    $lunch=$_POST['Lunch'];
-    $dinner=$_POST['Dinner'];
+require("db.php");
+if (isset($_POST['submit'])) {
     
-    $rows=pg_fetch_all($ret);
-    $Current_Date=date("Y-m-d");
-    foreach($rows as $row){
-        $R=$row['role'];
-        if ($_POST['role'] ==$R){
-            echo'test_post';
-            
-            $sql="INSERT INTO Admin_home (Role,AdminDate,PatientName,DocName,DocAppointment,CareName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
-            VALUES  ('$R','$AdminDate','$name','$DocName','$DocAppointment','$CareName','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
-            $ret= pg_query($db, $sql);
+        // $AdminDate=$_POST['AdminDate'];
+        $name=$_REQUEST['PatientName'];
+        $DocName=$_REQUEST['DocName'];
+        $DocAppointment=$_REQUEST['DocAppointment'];
+        $CareName=$_REQUEST['CareName'];
+        $morning=$_REQUEST['MorningMed'];
+        $afternoon=$_REQUEST['AfternoonMed'];
+        $nights=$_REQUEST['NightMed'];
+        $breakast=$_REQUEST['Breakfast'];
+        $lunch=$_REQUEST['Lunch'];
+        $dinner=$_REQUEST['Dinner'];
+        
+        // $rows=pg_fetch_all($ret);
+        $Current_Date=date("Y-m-d");
+        // foreach($rows as $row){
+        //     $R=$row['role'];
+        //     if ($_POST['role'] ==$R){
+        //         echo'test_post';
+        $db=db_connect($host,$port,$dbname,$credentials);
+    $sql="INSERT INTO Admin_home (PatientName,DocName,DocAppointment,CareName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
+    VALUES  
+    ('$name','$DocName','$DocAppointment','$CareName','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
+    $ret= pg_query($db, $sql);
 
-        }
-    }
-
+            // }
+        // }
+ }
+//  '$AdminDate'
 ?>
