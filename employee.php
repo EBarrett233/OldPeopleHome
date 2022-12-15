@@ -14,11 +14,12 @@
 </head>
 <h1>Employee Home</h1>
 <div class="container">
-    <form action = 'employee.php' method="POST">
+<form class="form" method="POST" name="Register" action="#">
 
     <label for="EmpName"><b>Employee Name:</b></label>
     <?php
-
+    require("db.php");
+    $db=db_connect($host,$port,$dbname,$credentials);
     $sql = "SELECT name_1 FROM emp_info;";
 
     $ret = pg_query($db, $sql);
@@ -30,11 +31,11 @@
     <label for="EmpID"><b>ID:</b></label>
     <?php
 
-    $sql = "SELECT emp_id FROM emp_info;";
+    $sql = "SELECT Emp_ID1 FROM emp_info;";
 
     $ret = pg_query($db, $sql);
     $row = pg_fetch_all($ret);
-        echo $row[0]['emp_id'];
+        echo $row[0]['emp_id1'];
 
     ?>
 
@@ -62,11 +63,11 @@
 if (isset($_REQUEST['submit'])) {
 
 
-    $salary = $_POST['patient_id'];
+    $salary = $_POST['Salary'];
 
-    require("db.php");
+    // require("db.php");
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql = " INSERT into emp_info (salary)
+        $sql = " INSERT into emp_info (Salary)
         VALUES
         ('$salary');";
         $ret = pg_query($db, $sql);

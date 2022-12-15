@@ -75,7 +75,7 @@
          CREATE TABLE IF NOT EXISTS Emp_INFO
          (Role             VARCHAR(50)    ,
          Emp_ID1                INT            ,
-         Name1              VARCHAR(50)    ,
+         Name_1              VARCHAR(50)    ,
          Salary            FlOAT          ,
          Emp_ID            INT            ,
          New_Salary        FLOAT          
@@ -113,12 +113,12 @@
       "
 
       ;
-      $ret = pg_query($db, $sql);
-      if(!$ret) {
-         echo pg_last_error($db);
-      } else {
-         // echo "Table created successfully\n";
-      }
+      // $ret = pg_query($db, $sql);
+      // if(!$ret) {
+      //    echo pg_last_error($db);
+      // } else {
+      //    echo "Table created successfully\n";
+      // }
       }
    // write $test function and use include or required on seprate files to keep the db functions on this page to transfer to other pages when the time comes
       pg_close($db);
