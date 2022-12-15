@@ -67,9 +67,8 @@ if (isset($_REQUEST['submit'])) {
 
     // require("db.php");
         $db=db_connect($host,$port,$dbname,$credentials);
-        $sql = " UPDATE into emp_info (Salary)
-        VALUES
-        ('$salary');";
+        $sql = " UPDATE emp_info 
+        SET Salary = '$salary';";
         $ret = pg_query($db, $sql);
 
 }
