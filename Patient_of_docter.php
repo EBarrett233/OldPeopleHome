@@ -13,21 +13,28 @@
 </div>
 </head>
 <form>
-    <h1>Patient of Docter</h1>
+    <h1>Patient Home</h1>
     <div class="container">
-    
-    <label for="AppointDate"><b>Date</b></label>
-    <input type="date" placeholder="Date" name="AppointDate">
-    <label for="Comment"><b>Comment:</b></label>
-    <input type="text" placeholder="Comment" name="Comment">
-    <label for="MorningMed"><b>Morning Medicine:</b></label>
-    <input type="text" placeholder="Med" name="MorningMed">
-    <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
-    <input type="text" placeholder="Med" name="AfternoonMed">
-    <label for="NightMed"><b>Night Medicine:</b></label>
-    <input type="text" placeholder="Med" name="NightMed">
-    <button type="submit" class="continue">
-    <strong>New </strong></button>
-    
-    
+<?php
+session_start();
+
+
+    require('db.php');
+    $db=db_connect($host,$port,$dbname,$credentials);
+    $sql="SELECT * FROM Patients_Home WHERE patients_id =".$_SESSION["id"] ;
+   
+    $ret= pg_query($db, $sql);
+    $rows = pg_fetch_all($ret);
+        // print_r($rows[0]['email']);
+        foreach ($rows as $row) {
+            echo 'Comment:'.$row ['Comment'].'<br>';
+            echo 'Date:'.$row ['date_p'].'<br>';
+            echo 'Morning Medicine:'.$row ['mor_med'].'<br>';
+            echo 'Afternoon Medicine:'.$row ['aft_med'].'<br>';
+            echo 'Night Medicine:'.$row ['night_med'].'<br>';
+            echo 'Breakast:'.$row ['breakast'].'<br>';
+        }
+?>
+
     </div>
+</form>

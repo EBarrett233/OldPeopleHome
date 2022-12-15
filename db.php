@@ -67,7 +67,8 @@
          Lunch             VARCHAR(50)    ,
          Dinner            VARCHAR(50)    ,
          Adm_Date          DATE           ,
-         DOB               DATE            ,
+         DOB               DATE           ,
+         Comment           VARCHAR(500)   ,
          ADMITTED          VARCHAR(50)    
          );
 
@@ -103,7 +104,7 @@
          NightMed       VARCHAR(50)    ,
          Breakfast      VARCHAR(50)    ,
          Lunch          VARCHAR(50)    ,
-         Dinner         VARCHAR(50)    
+         Dinner         VARCHAR(50)   ,
       );
 
 
