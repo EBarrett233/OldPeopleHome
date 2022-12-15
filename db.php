@@ -33,7 +33,7 @@
          CREATE TABLE IF NOT EXISTS Doctors_App 
          (Role             VARCHAR(50)    ,
          Patient_ID        VARCHAR(50)    ,            
-         Date_App          DATE           ,
+         Date_App          VARCHAR(50)           ,
          Doctor            VARCHAR(50)    ,
          Pat_Name          VARCHAR(50)    ,
          Comment           VARCHAR(50)    ,
