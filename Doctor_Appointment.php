@@ -67,3 +67,30 @@ $admin_pass='admin77';
         echo $row ['Night_Meds'].'<br>';
     }
 ?>
+
+<?php
+$db=db_connect($host,$port,$dbname,$credentials);
+    $patientid=$_POST['Patient_ID'];
+    $dateapp=$_POST['Date_App'];
+    $doctor=$_POST['Doctor'];
+    $name=$_POST['Pat_Name'];
+    $comment=$_POST['Comment'];
+    $morning=$_POST['MorningMed'];
+    $afternoon=$_POST['AfternoonMed'];
+    $nights=$_POST['NightMed'];
+    
+    $rows=pg_fetch_all($ret);
+    $Current_Date=date("Y-m-d");
+    foreach($rows as $row){
+        $R=$row['role'];
+        if ($_POST['role'] ==$R){
+            echo'test_post';
+            
+            $sql="INSERT INTO Doctors_App (Role,Patient_ID,Date_App,Pat_Name,Comment,MorningMed,AfternoonMed,NightMed) 
+            VALUES  ('$R','$patientid','$dateapp','$doctor','$name','$comment','$morning','$afternoon','$nights');";
+            $ret= pg_query($db, $sql);
+
+        }
+    }
+
+?>
