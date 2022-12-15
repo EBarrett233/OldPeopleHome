@@ -12,7 +12,7 @@
     <a href="employee.php">Employee</a>
 </div>
 </head>
-<form>
+<form class="form" method="POST" name="Register" action="#">
     <h1>Caregiver home</h1>
     <div class="container">
 
@@ -36,9 +36,9 @@
     <label for="Dinner"><b>Dinner:</b></label>
     <input type="text" placeholder="food" name="Dinner">
     </div>
-    <button type="submit" class="continue"><strong>OK</strong></button>
+    <button name = "submit"type="submit" class="continue"><strong>OK</strong></button>
     <button type="submit" class="cancle"><strong>Cancle</strong></button>
-
+</form>
     <?php
     require('db.php');
     $db=db_connect($host,$port,$dbname,$credentials);
@@ -60,3 +60,26 @@
         $ret= pg_query($db, $sql);
         $rows = pg_fetch_all($ret);
     ?>
+
+<?php
+if (isset($_POST['submit'])) {
+    
+        $name=$_REQUEST['PatientName'];
+        // $DocName=$_REQUEST['DocName'];
+        // $DocAppointment=$_REQUEST['DocAppointment'];
+        // $CareName=$_REQUEST['CareName'];
+        $morning=$_REQUEST['MorningMed'];
+        $afternoon=$_REQUEST['AfternoonMed'];
+        $nights=$_REQUEST['NightMed'];
+        $breakast=$_REQUEST['Breakfast'];
+        $lunch=$_REQUEST['Lunch'];
+        $dinner=$_REQUEST['Dinner'];
+        $Current_Date=date("Y-m-d");
+        $db=db_connect($host,$port,$dbname,$credentials);
+    $sql="INSERT INTO Admin_home (PatientName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
+    VALUES  
+    ('$name','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
+    $ret= pg_query($db, $sql);
+    }
+
+?>
