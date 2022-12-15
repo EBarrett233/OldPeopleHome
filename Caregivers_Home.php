@@ -11,6 +11,8 @@
     <a href="payment.php">Make a Payment</a>
     <a href="employee.php">Employee</a>
 </div>
+</head>
+<form class="form" method="POST" name="Register" action="#">
 
 </head> -->
 <form>
