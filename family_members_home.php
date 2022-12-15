@@ -32,8 +32,11 @@
     <?php
     require("db.php");
     $db=db_connect($host,$port,$dbname,$credentials);
+
+    $fam_code = $_POST['family_code'];
+
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Date_P FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Date_P FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -45,7 +48,7 @@
 
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT doc_name FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT doc_name FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -57,7 +60,7 @@
     
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Care_Name FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Care_Name FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -71,7 +74,7 @@
    
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Mor_Med FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Mor_Med FROM patients_home where f'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -83,7 +86,7 @@
 
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Aft_Med FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Aft_Med FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -95,7 +98,7 @@
     
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Night_Med FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Night_Med FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -107,7 +110,7 @@
 
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Breakast FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Breakast FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -119,7 +122,7 @@
 
     <?php
     if ('family_code' == 'patient_name') {
-        $sql = "SELECT Lunch FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Lunch FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -132,7 +135,7 @@
     <?php
     if ('family_code' == 'patient_name') {
 
-        $sql = "SELECT Dinner FROM patients_home where family_code = 'patients_name';";
+        $sql = "SELECT Dinner FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
         $row = pg_fetch_all($ret);
@@ -159,7 +162,8 @@
         $db = db_connect($host, $port, $dbname, $credentials);
         $sql = "UPDATE (fam_code)
         SET
-        ('$fam_code');";
+        ('$fam_code');
+        where 'patients_name' = $fam_code";
         $ret = pg_query($db, $sql);
 
     }
