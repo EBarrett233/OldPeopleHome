@@ -31,7 +31,7 @@
     </div>
 
     <div class="container">
-    <label for="Comment"><b>Patient ID:</b></label>
+    <label for="Comment"><b>Comment:</b></label>
     <input type="text" placeholder="ID" name="Comment">
     </div>
     <button type="submit" class="continue"><strong>OK</strong></button>
