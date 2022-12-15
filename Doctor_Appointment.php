@@ -42,36 +42,28 @@ $admin_pass='admin77';
 
     $rows = pg_fetch_all($ret);
     foreach ($rows as $row) {
-        echo '<br>'.'Patient ID';
+        echo '<br>'.'Patient ID:';
         echo $row ['Patient_ID'].'<br>';
-        echo 'Patient ID: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Appointment Date';
+        echo '<br>'.'Appointment Date:';
         echo $row ['Date_App'].'<br>';
-        echo 'Appointment Date: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Doctor';
+        echo '<br>'.'Doctor:';
         echo $row ['Doctor'].'<br>';
-        echo 'Doctor: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Patient Name';
+        echo '<br>'.'Patient Name:';
         echo $row ['Pat_Name'].'<br>';
-        echo 'Patient Name: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Comments';
+        echo '<br>'.'Comments:';
         echo $row ['Comment'].'<br>';
-        echo 'Comment: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Morning Meds';
+        echo '<br>'.'Morning Meds:';
         echo $row ['Morning_Meds'].'<br>';
-        echo 'Morning Meds: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Afternoon Meds';
+        echo '<br>'.'Afternoon Meds:';
         echo $row ['Afternoon_Meds'].'<br>';
-        echo 'Afternoon Meds: '.$row ['role'].'<br>';
 
-        echo '<br>'.'Night Meds';
+        echo '<br>'.'Night Meds:';
         echo $row ['Night_Meds'].'<br>';
-        echo 'Night Meds: '.$row ['role'].'<br>';
     }
 ?>
