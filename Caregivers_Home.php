@@ -13,6 +13,13 @@
 </div>
 </head>
 <form class="form" method="POST" name="Register" action="#">
+
+</head> -->
+<form>
+
+</head>
+<form class="form" method="POST" name="Register" action="#">
+
     <h1>Caregiver home</h1>
     <div class="container">
 
