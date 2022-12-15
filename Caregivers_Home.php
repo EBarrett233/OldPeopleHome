@@ -60,3 +60,29 @@
         $ret= pg_query($db, $sql);
         $rows = pg_fetch_all($ret);
     ?>
+
+<?php
+$db=db_connect($host,$port,$dbname,$credentials);
+    $name=$_POST['PatientName'];
+    $morning=$_POST['MorningMed'];
+    $afternoon=$_POST['AfternoonMed'];
+    $nights=$_POST['NightMed'];
+    $breakast=$_POST['Breakfast'];
+    $lunch=$_POST['Lunch'];
+    $dinner=$_POST['Dinner'];
+    
+    $rows=pg_fetch_all($ret);
+    $Current_Date=date("Y-m-d");
+    foreach($rows as $row){
+        $R=$row['role'];
+        if ($_POST['role'] ==$R){
+            echo'test_post';
+            
+            $sql="INSERT INTO Admin_home (Role,PatientName,MorningMed,AfternoonMed,NightMed,Breakfast,Lunch,Dinner) 
+            VALUES  ('$R','$name','$morning','$afternoon','$nights','$breakast','$lunch','$dinner');";
+            $ret= pg_query($db, $sql);
+
+        }
+    }
+
+?>
