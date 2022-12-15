@@ -55,25 +55,25 @@
         }
 
 
-        $db=db_connect($host,$port,$dbname,$credentials);
-        $sql="SELECT Patients_Name,Mor_Med,Aft_Med,Night_Med,Breakast,Lunch,Dinner FROM Patients_Home WHERE Role ='patient'";
-        $ret= pg_query($db, $sql);
-        $rows = pg_fetch_all($ret);
-        foreach ($rows as $row) {
-            echo'<br>';
-            echo $row ['patients_name'].' morning medicine is '.$row ['mor_med'].'<br>';
-            echo'<br>';
-            echo $row ['patients_name'].' Afternoon medicine is '.$row ['aft_med'].'<br>';
-            echo'<br>';
-            echo $row ['patients_name'].' Night medicine is '.$row ['night_med'].'<br>';
-            echo'<br>';
-            echo $row ['patients_name'].' Breakfeast is'.$row ['breakast'].'<br>';
-            echo'<br>';
-            echo $row ['patients_name'].' lunch is '.$row ['lunch'].'<br>';
-            echo'<br>';
-            echo $row ['patients_name'].' dinner is '.$row ['dinner'].'<br>';
-            echo'<br>';
-        }
+        // $db=db_connect($host,$port,$dbname,$credentials);
+        // $sql="SELECT Patients_Name,Mor_Med,Aft_Med,Night_Med,Breakast,Lunch,Dinner FROM Patients_Home WHERE Role ='patient'";
+        // $ret= pg_query($db, $sql);
+        // $rows = pg_fetch_all($ret);
+        // foreach ($rows as $row) {
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' morning medicine is '.$row ['mor_med'].'<br>';
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' Afternoon medicine is '.$row ['aft_med'].'<br>';
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' Night medicine is '.$row ['night_med'].'<br>';
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' Breakfeast is'.$row ['breakast'].'<br>';
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' lunch is '.$row ['lunch'].'<br>';
+        //     echo'<br>';
+        //     echo $row ['patients_name'].' dinner is '.$row ['dinner'].'<br>';
+        //     echo'<br>';
+        // }
 ?>
     </div>
 
