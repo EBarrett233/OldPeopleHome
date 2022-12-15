@@ -42,7 +42,8 @@
         foreach ($rows as $row) {
             $num+=1;
             echo '<br>'.'Patient  '.$num.') ';
-            // echo $row ['*'].'<br>';
+            echo $row ['patientname'].'<br>';
+            echo 'morning meds ='.$row ['morningmed'].'<br>';
             // echo ' Patients Name: '.$row ['f_name'].'<br>';
             
         }
