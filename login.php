@@ -38,15 +38,19 @@
             elseif ($row['pwd']==$_POST['pwd'])
                 if ($row['role']=='doctor'){
                     header("Location:Doctor_Appointment.php");
+                    $row['id'] = $_SESSION['id'];
                 }
                 elseif($row['role']=='caregiver'){
                     header("Location:Caregivers_Home.php");
+                    $row['id'] = $_SESSION['id'];
                 }
                 elseif($row['role']=='patient'){
                     header("Location:Patient_Home.php");
+                    $row['id'] = $_SESSION['id'];
                 }
                 elseif($row['role']=='Supervisor'){
                     header("Location:Admin_Home.php");
+                    $row['id'] = $_SESSION['id']; 
                 }
                     // checks user info and takes to this page WILL CHANGE when home page is added
         }
