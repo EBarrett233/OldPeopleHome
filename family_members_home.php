@@ -35,7 +35,7 @@
 
     $fam_code = $_POST['family_code'];
 
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Date_P FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -47,7 +47,7 @@
     <label for="DocDate"><b>Docter Name:</b></label>
 
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT doc_name FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -59,7 +59,7 @@
     <label for="CareName"><b>Caregiver Name:</b></label>
     
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Care_Name FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -73,7 +73,7 @@
     <label for="Mor_Med"><b>Morning Medicine:</b></label>
    
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Mor_Med FROM patients_home where f'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -85,7 +85,7 @@
     <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
 
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Aft_Med FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -97,7 +97,7 @@
     <label for="NightMed"><b>Night Medicine:</b></label>
     
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Night_Med FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -109,7 +109,7 @@
     <label for="Breakfast"><b>Breakfast:</b></label>
 
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Breakast FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -121,7 +121,7 @@
     <label for="Lunch"><b>Lunch:</b></label>
 
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
         $sql = "SELECT Lunch FROM patients_home where 'patients_name' = $fam_code;";
 
         $ret = pg_query($db, $sql);
@@ -133,7 +133,7 @@
     <label for="Dinner"><b>Dinner:</b></label>
 
     <?php
-    if ('family_code' == 'patient_name') {
+    if ($fam_code == 'patient_name') {
 
         $sql = "SELECT Dinner FROM patients_home where 'patients_name' = $fam_code;";
 
