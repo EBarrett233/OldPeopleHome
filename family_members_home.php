@@ -14,38 +14,55 @@
 </head>
 <form>
     <h1>Family Member's Home</h1>
+
+    </div>
+    <div class="container">
+    <label for="family code"><b>Family Code(For Patient Family Member):</b></label>
+    <input type="text" placeholder="Family Code" name="family_code">
+    
+
+</div>
+    <button name="submit" type="submit" class="continue"><strong>OK</strong></button>
+    <button type="submit" class="cancle"><strong>Cancle</strong></button>
+
+
     <div class="container">
     
     <label for="AppointDate"><b>Date</b></label>
     <?php
     require("db.php");
     $db=db_connect($host,$port,$dbname,$credentials);
-    $sql = "SELECT Date_P FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Date_P FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['date_p'];
-
+    }
     ?>
 
     <label for="DocDate"><b>Docter Name:</b></label>
 
     <?php
-    $sql = "SELECT doc_name FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT doc_name FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['doc_name'];
+    }
     ?>
 
     <label for="CareName"><b>Caregiver Name:</b></label>
     
     <?php
-    $sql = "SELECT Care_Name FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Care_Name FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['Care_Name'];
+    }
     ?>
 
     </div>
@@ -53,61 +70,74 @@
     <label for="Mor_Med"><b>Morning Medicine:</b></label>
    
     <?php
-    $sql = "SELECT Mor_Med FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Mor_Med FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['mor_med'];
+    }
     ?>
 
     <label for="AfternoonMed"><b>Afternoon Medicine:</b></label>
 
     <?php
-    $sql = "SELECT Aft_Med FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Aft_Med FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['aft_med'];
+    }
     ?>
 
     <label for="NightMed"><b>Night Medicine:</b></label>
     
     <?php
-    $sql = "SELECT Night_Med FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Night_Med FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['night_med'];
+    }
     ?>
 
     <label for="Breakfast"><b>Breakfast:</b></label>
 
     <?php
-    $sql = "SELECT Breakast FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Breakast FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['breakast'];
+    }
     ?>
 
     <label for="Lunch"><b>Lunch:</b></label>
 
     <?php
-    $sql = "SELECT Lunch FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
+        $sql = "SELECT Lunch FROM patients_home where family_code = 'patients_name';";
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['lunch'];
+    }
     ?>
 
     <label for="Dinner"><b>Dinner:</b></label>
 
     <?php
-    $sql = "SELECT Dinner FROM patients_home where family_code = 'patients_name';";
+    if ('family_code' == 'patient_name') {
 
-    $ret = pg_query($db, $sql);
-    $row = pg_fetch_all($ret);
+        $sql = "SELECT Dinner FROM patients_home where family_code = 'patients_name';";
+
+        $ret = pg_query($db, $sql);
+        $row = pg_fetch_all($ret);
         echo $row[0]['dinner'];
+    }
     ?>
 
     </div>
